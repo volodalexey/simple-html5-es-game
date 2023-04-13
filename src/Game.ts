@@ -1,11 +1,12 @@
-import { Container, type Texture, Graphics } from 'pixi.js'
+import { Container, type Texture } from 'pixi.js'
 import { type IPlayerOptions, Player } from './Player'
 import { StatusBar } from './StatusBar'
 import { StartModal } from './StartModal'
 import { InputHandler } from './InputHandler'
 import { type IMapSettings } from './MapSettings'
-import { logCameraboxBounds, logViewportBounds } from './logger'
 import { TileMap } from './TileMap'
+import { Camera } from './Camera'
+import { Collider } from './Collider'
 
 export interface IGameOptions {
   viewWidth: number
@@ -17,27 +18,12 @@ export interface IGameOptions {
   }
 }
 
-interface IBoundsData {
-  top: number
-  right: number
-  bottom: number
-  left: number
-}
-
 export class Game extends Container {
   public gameEnded = false
   public time = 0
 
   static options = {
-    maxTime: 25000,
-    camerabox: {
-      offset: {
-        x: -42,
-        y: -34
-      },
-      initWidth: 100,
-      initHeight: 100
-    }
+    maxTime: 25000
   }
 
   public viewWidth: number
@@ -47,7 +33,9 @@ export class Game extends Container {
   public tileMap!: TileMap
   public statusBar!: StatusBar
   public startModal!: StartModal
-  public camerabox = new Graphics()
+  public camera!: Camera
+  public collider!: Collider
+
   constructor (options: IGameOptions) {
     super()
 
@@ -82,42 +70,37 @@ export class Game extends Container {
     this.statusBar = new StatusBar()
     this.addChild(this.statusBar)
 
-    this.player = new Player({ game: this, textures: elvenTextures })
+    this.inputHandler = new InputHandler({ eventTarget: this.tileMap })
 
-    this.camerabox.beginFill(0xffff00)
-    this.camerabox.drawRect(0, 0, Game.options.camerabox.initWidth, Game.options.camerabox.initHeight)
-    this.camerabox.endFill()
-    this.camerabox.alpha = logCameraboxBounds.enabled ? 0.5 : 0
-    this.addChild(this.camerabox)
+    this.player = new Player({ inputHandler: this.inputHandler, textures: elvenTextures })
 
-    this.inputHandler = new InputHandler({ eventTarget: this.tileMap, relativeToTarget: this.player })
+    this.camera = new Camera({ tileMap: this.tileMap })
+    const { camerabox } = this.camera
+    const { width: oldWidth, height: oldHeight } = this.player
+    this.player.addChild(camerabox)
+    const { width: newWidth, height: newHeight } = this.player
+    const addX = (newWidth - oldWidth) / 2
+    const addY = (newHeight - oldHeight) / 2
+
+    this.player.children.forEach(child => {
+      if (child !== camerabox) {
+        child.position.x += addX
+        child.position.y += addY
+      }
+    })
 
     this.addChild(this.player)
 
     this.startModal = new StartModal({ viewWidth, viewHeight })
     this.startModal.visible = false
     this.addChild(this.startModal)
-  }
 
-  getCameraboxBounds (): IBoundsData {
-    const { x, y, width, height } = this.camerabox
-    const bounds: IBoundsData = {
-      top: y,
-      right: x + width,
-      bottom: y + height,
-      left: x
-    }
-    return bounds
-  }
+    this.inputHandler.relativeToTarget = this.player
 
-  updateCamerabox (): void {
-    this.player.updateHitbox()
-    const { position } = this.player.hitbox
-    const { offset: { x, y } } = Game.options.camerabox
-    this.camerabox.position = {
-      x: position.x + x,
-      y: position.y + y
-    }
+    this.collider = new Collider({
+      staticShapes: this.tileMap.hitboxes.children,
+      bodies: [this.player]
+    })
   }
 
   addEventLesteners (): void {
@@ -159,34 +142,7 @@ export class Game extends Container {
       return
     }
     this.player.handleUpdate(deltaMS)
-    this.handleCamera()
-  }
-
-  handleCamera (): void {
-    this.updateCamerabox()
-    const cameraboxBounds = this.getCameraboxBounds()
-    const viewportBounds = this.tileMap.getViewportBounds(1)
-    logViewportBounds(`top=${viewportBounds.top} right=${viewportBounds.right} bottom=${viewportBounds.bottom} left=${viewportBounds.left}`)
-    const { pivot } = this.tileMap
-    if (cameraboxBounds.top < viewportBounds.top) {
-      pivot.y -= viewportBounds.top - cameraboxBounds.top
-    } else if (cameraboxBounds.bottom > viewportBounds.bottom) {
-      pivot.y += cameraboxBounds.bottom - viewportBounds.bottom
-    }
-    if (cameraboxBounds.left < viewportBounds.left) {
-      pivot.x -= viewportBounds.left - cameraboxBounds.left
-    } else if (cameraboxBounds.right > viewportBounds.right) {
-      pivot.x += cameraboxBounds.right - viewportBounds.right
-    }
-    if (pivot.x < 0) {
-      pivot.x = 0
-    } else if (pivot.x > this.tileMap.maxXPivot) {
-      pivot.x = this.tileMap.maxXPivot
-    }
-    if (pivot.y < 0) {
-      pivot.y = 0
-    } else if (pivot.y > this.tileMap.maxYPivot) {
-      pivot.y = this.tileMap.maxYPivot
-    }
+    this.collider.handleUpdate(deltaMS)
+    this.camera.handleUpdate(deltaMS)
   }
 }

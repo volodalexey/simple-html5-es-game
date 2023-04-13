@@ -1,416 +1,351 @@
-import { type Game } from './Game'
-import { PlayerAnimation } from './Player'
-
-export enum EPlayerState {
-  standLeft = 'standLeft',
-  standRight = 'standRight',
-  standUp = 'standUp',
-  standDown = 'standDown',
-  walkLeft = 'walkLeft',
-  walkRight = 'walkRight',
-  walkUp = 'walkUp',
-  walkDown = 'walkDown',
-  attackLeft = 'attackLeft',
-  attackRight = 'attackRight',
-  attackUp = 'attackUp',
-  attackDown = 'attackDown',
-  deadDown = 'deadDown',
-}
-
-interface IPlayerStateOptions {
-  game: Game
-  state: EPlayerState
-}
-
-export class PlayerState {
-  public game!: Game
-  public state!: EPlayerState
-  constructor ({ game, state }: IPlayerStateOptions) {
-    this.state = state
-    this.game = game
-  }
-
-  enter (): void {
-    throw new Error('enter() not implemented in child class')
-  }
-
-  handleInput (): void {
-    throw new Error('handleInput() not implemented in child class')
-  }
-}
+import {
+  EBodyState,
+  StandUp, StandRight, StandDown, StandLeft,
+  WalkUp, WalkRight, WalkDown, WalkLeft,
+  AttackUp, AttackRight, AttackDown, AttackLeft,
+  DeadDown
+} from './BodyState'
+import { type InputHandler } from './InputHandler'
+import { type Player } from './Player'
 
 interface IPlayerStateChildOptions {
-  game: Game
+  player: Player
+  inputHandler: InputHandler
 }
 
-export class StandUp extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.standUp })
-  }
+export class PlayerStandUp extends StandUp {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.standUp)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackUp)
+      body.setState(EBodyState.attackUp)
     }
   }
 }
 
-export class StandRight extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.standRight })
-  }
+export class PlayerStandRight extends StandRight {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.standRight)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackRight)
+      body.setState(EBodyState.attackRight)
     }
   }
 }
 
-export class StandDown extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.standDown })
-  }
+export class PlayerStandDown extends StandDown {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.standDown)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackDown)
+      body.setState(EBodyState.attackDown)
     }
   }
 }
 
-export class StandLeft extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.standLeft })
-  }
+export class PlayerStandLeft extends StandLeft {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.standLeft)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackLeft)
+      body.setState(EBodyState.attackLeft)
     }
   }
 }
 
-export class WalkUp extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.walkUp })
-  }
+export class PlayerWalkUp extends WalkUp {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.walkUp)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackUp)
-    } else {
-      player.setState(EPlayerState.standUp)
+      body.setState(EBodyState.attackUp)
+    } else if (!inputHandler.hasDirectionUp()) {
+      body.setState(EBodyState.standUp)
     }
   }
 }
 
-export class WalkRight extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.walkRight })
-  }
+export class PlayerWalkRight extends WalkRight {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.walkRight)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackRight)
-    } else {
-      player.setState(EPlayerState.standRight)
+      body.setState(EBodyState.attackRight)
+    } else if (!inputHandler.hasDirectionRight()) {
+      body.setState(EBodyState.standRight)
     }
   }
 }
 
-export class WalkDown extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.walkDown })
-  }
+export class PlayerWalkDown extends WalkDown {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.walkDown)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackDown)
-    } else {
-      player.setState(EPlayerState.standDown)
+      body.setState(EBodyState.attackDown)
+    } else if (!inputHandler.hasDirectionDown()) {
+      body.setState(EBodyState.standDown)
     }
   }
 }
 
-export class WalkLeft extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.walkLeft })
-  }
+export class PlayerWalkLeft extends WalkLeft {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.switchAnimation(PlayerAnimation.walkLeft)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasSpecial()) {
-      player.setState(EPlayerState.attackLeft)
-    } else {
-      player.setState(EPlayerState.standLeft)
+      body.setState(EBodyState.attackLeft)
+    } else if (!inputHandler.hasDirectionLeft()) {
+      body.setState(EBodyState.standLeft)
     }
   }
 }
 
-export class AttackUp extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.attackUp })
-  }
+export class PlayerAttackUp extends AttackUp {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.stop()
-    player.switchAnimation(PlayerAnimation.attackUp)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
       if (inputHandler.hasDirectionUp()) {
-        player.setState(EPlayerState.attackUp)
+        body.setState(EBodyState.attackUp)
       } else if (inputHandler.hasDirectionRight()) {
-        player.setState(EPlayerState.attackRight)
+        body.setState(EBodyState.attackRight)
       } else if (inputHandler.hasDirectionDown()) {
-        player.setState(EPlayerState.attackDown)
+        body.setState(EBodyState.attackDown)
       } else if (inputHandler.hasDirectionLeft()) {
-        player.setState(EPlayerState.attackLeft)
+        body.setState(EBodyState.attackLeft)
       }
     } else if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else {
-      player.setState(EPlayerState.standLeft)
+      body.setState(EBodyState.standUp)
     }
   }
 }
 
-export class AttackRight extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.attackRight })
-  }
+export class PlayerAttackRight extends AttackRight {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.stop()
-    player.switchAnimation(PlayerAnimation.attackRight)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
       if (inputHandler.hasDirectionUp()) {
-        player.setState(EPlayerState.attackUp)
+        body.setState(EBodyState.attackUp)
       } else if (inputHandler.hasDirectionRight()) {
-        player.setState(EPlayerState.attackRight)
+        body.setState(EBodyState.attackRight)
       } else if (inputHandler.hasDirectionDown()) {
-        player.setState(EPlayerState.attackDown)
+        body.setState(EBodyState.attackDown)
       } else if (inputHandler.hasDirectionLeft()) {
-        player.setState(EPlayerState.attackLeft)
+        body.setState(EBodyState.attackLeft)
       }
     } else if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else {
-      player.setState(EPlayerState.standLeft)
+      body.setState(EBodyState.standRight)
     }
   }
 }
 
-export class AttackDown extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.attackDown })
-  }
+export class PlayerAttackDown extends AttackDown {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.stop()
-    player.switchAnimation(PlayerAnimation.attackDown)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
       if (inputHandler.hasDirectionUp()) {
-        player.setState(EPlayerState.attackUp)
+        body.setState(EBodyState.attackUp)
       } else if (inputHandler.hasDirectionRight()) {
-        player.setState(EPlayerState.attackRight)
+        body.setState(EBodyState.attackRight)
       } else if (inputHandler.hasDirectionDown()) {
-        player.setState(EPlayerState.attackDown)
+        body.setState(EBodyState.attackDown)
       } else if (inputHandler.hasDirectionLeft()) {
-        player.setState(EPlayerState.attackLeft)
+        body.setState(EBodyState.attackLeft)
       }
     } else if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else {
-      player.setState(EPlayerState.standLeft)
+      body.setState(EBodyState.standDown)
     }
   }
 }
 
-export class AttackLeft extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.attackLeft })
-  }
+export class PlayerAttackLeft extends AttackLeft {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.stop()
-    player.switchAnimation(PlayerAnimation.attackLeft)
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 
   handleInput (): void {
-    const { inputHandler, player } = this.game
+    const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
       if (inputHandler.hasDirectionUp()) {
-        player.setState(EPlayerState.attackUp)
+        body.setState(EBodyState.attackUp)
       } else if (inputHandler.hasDirectionRight()) {
-        player.setState(EPlayerState.attackRight)
+        body.setState(EBodyState.attackRight)
       } else if (inputHandler.hasDirectionDown()) {
-        player.setState(EPlayerState.attackDown)
+        body.setState(EBodyState.attackDown)
       } else if (inputHandler.hasDirectionLeft()) {
-        player.setState(EPlayerState.attackLeft)
+        body.setState(EBodyState.attackLeft)
       }
     } else if (inputHandler.hasDirectionUp()) {
-      player.setState(EPlayerState.walkUp)
+      body.setState(EBodyState.walkUp)
     } else if (inputHandler.hasDirectionRight()) {
-      player.setState(EPlayerState.walkRight)
+      body.setState(EBodyState.walkRight)
     } else if (inputHandler.hasDirectionDown()) {
-      player.setState(EPlayerState.walkDown)
+      body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
-      player.setState(EPlayerState.walkLeft)
+      body.setState(EBodyState.walkLeft)
     } else {
-      player.setState(EPlayerState.standLeft)
+      body.setState(EBodyState.standLeft)
     }
   }
 }
 
-export class DeadDown extends PlayerState {
-  constructor ({ game }: IPlayerStateChildOptions) {
-    super({ game, state: EPlayerState.deadDown })
-  }
+export class PlayerDeadDown extends DeadDown {
+  public inputHandler !: InputHandler
 
-  enter (): void {
-    const { player } = this.game
-    player.stop()
-    player.switchAnimation(PlayerAnimation.deadDown)
-  }
-
-  handleInput (): void {
-
+  constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
+    super({ body: player })
+    this.inputHandler = inputHandler
   }
 }

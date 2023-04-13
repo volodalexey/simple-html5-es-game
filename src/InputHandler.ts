@@ -1,19 +1,19 @@
-import { type FederatedPointerEvent, type Container } from 'pixi.js'
+import { type FederatedPointerEvent, type Container, type IPointData } from 'pixi.js'
 
 import { logInputDirection, logKeydown, logKeyup, logPointerEvent } from './logger'
 
 interface IInputHandlerOptions {
   interactiveChildren?: boolean
   eventTarget: Container
-  relativeToTarget?: Container
 }
 
 export class InputHandler {
   public pointerXDown: number | null = null
   public pointerYDown: number | null = null
+  public pointerSpecial = false
   public eventTarget!: Container
-  public relativeToTarget?: Container & {
-    getHitboxBounds?: () => {
+  public relativeToTarget!: Container & {
+    getCollisionShapeBounds: (relativePoint?: IPointData) => {
       top: number
       right: number
       bottom: number
@@ -22,9 +22,8 @@ export class InputHandler {
   }
 
   public interactiveChildren!: boolean
-  constructor ({ eventTarget, relativeToTarget, interactiveChildren = false }: IInputHandlerOptions) {
+  constructor ({ eventTarget, interactiveChildren = false }: IInputHandlerOptions) {
     this.eventTarget = eventTarget
-    this.relativeToTarget = relativeToTarget
     this.interactiveChildren = interactiveChildren
 
     this.addEventLesteners()
@@ -138,39 +137,55 @@ export class InputHandler {
   }
 
   hasSpecial (): boolean {
-    return false
+    return this.pointerSpecial
   }
 
   private applyPointerToDirection (pressed: boolean | undefined, x: number, y: number): void {
-    const { relativeToTarget } = this
+    const { eventTarget, relativeToTarget } = this
+    this.pointerSpecial = false
     if (pressed === true || (pressed === undefined && this.isPointerDown())) {
-      if (relativeToTarget != null) {
-        const bounds = typeof relativeToTarget.getHitboxBounds === 'function'
-          ? relativeToTarget.getHitboxBounds()
-          : {
-              left: relativeToTarget.x,
-              right: relativeToTarget.x + relativeToTarget.width,
-              top: relativeToTarget.y,
-              bottom: relativeToTarget.y + relativeToTarget.height
-            }
-        if (x >= bounds.right) {
-          this.pointerXDown = 1
-        } else if (x <= bounds.left) {
-          this.pointerXDown = -1
-        }
-        if (y <= bounds.top) {
-          this.pointerYDown = -1
-        } else if (y >= bounds.bottom) {
+      const position = eventTarget.toLocal(relativeToTarget)
+      const bounds = relativeToTarget.getCollisionShapeBounds(position)
+      const absDiffX = Math.abs(x - position.x)
+      const absDiffY = Math.abs(y - position.y)
+      if (x >= bounds.left && x <= bounds.right) {
+        // pure vertical line, no horizontal
+        this.pointerXDown = null
+        if (y >= bounds.bottom) {
           this.pointerYDown = 1
-        }
-        if (bounds.left < x && x < bounds.right &&
-          bounds.top < y && y < bounds.bottom) {
-          // jump when pointer inside hitbox
+        } else if (y <= bounds.top) {
           this.pointerYDown = -1
+        } else {
+          this.pointerSpecial = true
+        }
+      } else if (y >= bounds.top && y <= bounds.bottom) {
+        // pure horizontal line, no vertical
+        this.pointerYDown = null
+        if (x > bounds.right) {
+          this.pointerXDown = 1
+        } else if (x < bounds.left) {
+          this.pointerXDown = -1
+        } else {
+          this.pointerSpecial = true
         }
       } else {
-        this.pointerXDown = x
-        this.pointerYDown = y
+        if (absDiffX >= absDiffY) {
+          this.pointerYDown = 0
+          // more pressure by X than by Y
+          if (x > bounds.right) {
+            this.pointerXDown = 1
+          } else if (x < bounds.left) {
+            this.pointerXDown = -1
+          }
+        } else {
+          this.pointerXDown = 0
+          // more pressure by Y than by X
+          if (y > bounds.bottom) {
+            this.pointerYDown = 1
+          } else if (y < bounds.top) {
+            this.pointerYDown = -1
+          }
+        }
       }
       logInputDirection(`MOVE|START px=${this.pointerXDown} py=${this.pointerYDown} rt=${Boolean(relativeToTarget)}`)
     } else if (pressed === false) {

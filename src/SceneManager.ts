@@ -15,7 +15,6 @@ class DefaultScene extends Container implements IScene {
   handleResize (): void {}
 }
 
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export abstract class SceneManager {
   private constructor () { }
   public static app: Application<HTMLCanvasElement>
