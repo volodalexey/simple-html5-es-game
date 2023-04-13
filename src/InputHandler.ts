@@ -71,6 +71,9 @@ export class InputHandler {
       case 'KeyS':case 'ArrowDown':
         this.applyDownDirection(true)
         break
+      case 'ShiftLeft': case 'ControlLeft': case 'Space':
+        this.pointerSpecial = true
+        break
     }
   }
 
@@ -89,20 +92,36 @@ export class InputHandler {
       case 'KeyS':case 'ArrowDown':
         this.applyDownDirection(false)
         break
+      case 'ShiftLeft': case 'ControlLeft': case 'Space':
+        this.pointerSpecial = false
+        break
     }
   }
 
   private applyUpDirection (pressed: boolean): void {
-    this.pointerYDown = pressed ? -1 : null
+    if (pressed) {
+      this.pointerXDown = this.pointerXDown != null ? 0 : null
+    }
+    this.pointerYDown = pressed
+      ? -1
+      : (this.pointerYDown === -1 ? null : this.pointerYDown)
     logInputDirection(`UP px=${this.pointerXDown} py=${this.pointerYDown}`)
   }
 
   private applyDownDirection (pressed: boolean): void {
-    this.pointerYDown = pressed ? 1 : null
+    if (pressed) {
+      this.pointerXDown = this.pointerXDown != null ? 0 : null
+    }
+    this.pointerYDown = pressed
+      ? 1
+      : (this.pointerYDown === 1 ? null : this.pointerYDown)
     logInputDirection(`DOWN px=${this.pointerXDown} py=${this.pointerYDown}`)
   }
 
   private applyLeftDirection (pressed: boolean): void {
+    if (pressed) {
+      this.pointerYDown = this.pointerYDown != null ? 0 : null
+    }
     this.pointerXDown = pressed
       ? -1
       : (this.pointerXDown === -1 ? null : this.pointerXDown)
@@ -110,6 +129,9 @@ export class InputHandler {
   }
 
   private applyRightDirection (pressed: boolean): void {
+    if (pressed) {
+      this.pointerYDown = this.pointerYDown != null ? 0 : null
+    }
     this.pointerXDown = pressed
       ? 1
       : (this.pointerXDown === 1 ? null : this.pointerXDown)

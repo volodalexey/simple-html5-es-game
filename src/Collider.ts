@@ -7,7 +7,9 @@ export interface IColliderOptions {
 
 interface IColliderBody {
   x: number
+  initX: number
   y: number
+  initY: number
   obj: Body
 }
 
@@ -35,8 +37,17 @@ export class Collider {
   addKinematicBody (body: Body): void {
     this.bodies.push({
       x: body.x,
+      initX: body.x,
       y: body.y,
+      initY: body.y,
       obj: body
+    })
+  }
+
+  restart (): void {
+    this.bodies.forEach(b => {
+      b.x = b.initX
+      b.y = b.initY
     })
   }
 

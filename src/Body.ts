@@ -43,6 +43,9 @@ export enum BodyAnimation {
 export class Body extends Container {
   public velocity = new Vector({ direction: EVectorDirection.down, speed: 0 })
 
+  public initX !: number
+  public initY !: number
+
   static options = {
     collisionShape: {
       offset: {
@@ -259,7 +262,6 @@ export class Body extends Container {
     this.currentAnimation = newAnimation
     this.hideAllAnimations()
     if (this.currentAnimation instanceof AnimatedSprite) {
-      console.log('switchAnimation gotoAndPlay')
       this.currentAnimation.gotoAndPlay(0)
     }
     this.currentAnimation.visible = true
@@ -291,16 +293,16 @@ export class Body extends Container {
 
   restart (): void {
     this.stop()
-    this.setPosition({ x: 150, y: 50 })
+    this.setCollisionShapePosition({ x: this.initX, y: this.initY })
     this.setState(EBodyState.standDown)
   }
 
-  setPosition ({ x, y }: { x?: number, y?: number }): void {
+  setCollisionShapePosition ({ x, y }: { x?: number, y?: number }): void {
     if (x != null) {
-      this.position.x = x + (this.position.x - this.collisionShape.position.x)
+      this.position.x = x - this.collisionShape.position.x
     }
     if (y != null) {
-      this.position.y = y + (this.position.y - this.collisionShape.position.y)
+      this.position.y = y - this.collisionShape.position.y
     }
   }
 

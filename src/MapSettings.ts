@@ -108,4 +108,32 @@ export abstract class MapSettings {
     }
     return positions
   }
+
+  static mapTilesToPositions ({
+    mapSettings,
+    layerName,
+    tileIds
+  }: {
+    mapSettings: IMapSettings
+    layerName: string
+    tileIds: number[]
+  }): IPositionData[] {
+    const positions: IPositionData[] = []
+    const tileLayer = MapSettings.findTileLayer({ name: layerName, mapSettings })
+    const tilesPerRow = mapSettings.width
+    for (let i = 0; i < tileLayer.data.length; i += tilesPerRow) {
+      const row = tileLayer.data.slice(i, i + tilesPerRow)
+      row.forEach((symbol, j) => {
+        if (tileIds.includes(symbol)) {
+          positions.push({
+            x: j * mapSettings.tilewidth,
+            y: i / tilesPerRow * mapSettings.tileheight,
+            width: mapSettings.tilewidth,
+            height: mapSettings.tileheight
+          })
+        }
+      })
+    }
+    return positions
+  }
 }

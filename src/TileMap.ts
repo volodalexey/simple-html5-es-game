@@ -1,5 +1,5 @@
 import { Container, Sprite, type Texture } from 'pixi.js'
-import { MapSettings, type IMapSettings } from './MapSettings'
+import { MapSettings, type IMapSettings, type IPositionData } from './MapSettings'
 import { Hitbox } from './Hitbox'
 import { logLayout } from './logger'
 
@@ -39,10 +39,11 @@ export class TileMap extends Container {
     this.addChild(this.hitboxes)
   }
 
-  initLevel ({ levelSettings }: { levelSettings: IMapSettings }): void {
-    const hitboxesPoints = MapSettings.mapObjectToPositions({
+  initLevel ({ levelSettings }: { levelSettings: IMapSettings }): IPositionData {
+    const hitboxesPoints = MapSettings.mapTilesToPositions({
       mapSettings: levelSettings,
-      layerName: 'Hitboxes'
+      layerName: 'Misc',
+      tileIds: [2, 4, 6, 7, 8, 9, 10, 16, 17, 18, 19]
     })
 
     hitboxesPoints.forEach(cp => {
@@ -53,15 +54,22 @@ export class TileMap extends Container {
         initHeight: cp.height
       }))
     })
+
+    const playersPoints = MapSettings.mapObjectToPositions({
+      mapSettings: levelSettings,
+      layerName: 'Player'
+    })
+
+    return playersPoints[0]
   }
 
-  getViewportBounds (scale: number): IBoundsData {
+  getViewportBounds (): IBoundsData {
     const { viewWidth, viewHeight } = this
     const { pivot: { x, y } } = this
     const bounds = {
       top: y,
-      right: x + viewWidth * scale,
-      bottom: y + viewHeight * scale,
+      right: x + viewWidth,
+      bottom: y + viewHeight,
       left: x
     }
     return bounds
@@ -85,5 +93,9 @@ export class TileMap extends Container {
       this.maxYPivot = 0
     }
     logLayout(`x=${this.x} y=${this.y} w=${width} h=${height}`)
+  }
+
+  restart (): void {
+    this.pivot.set(0, 0)
   }
 }

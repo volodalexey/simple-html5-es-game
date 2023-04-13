@@ -9,7 +9,7 @@ export const manifest: ResolverManifest = {
       name: 'initial-bundle',
       assets: {
         spritesheet: 'assets/spritesheets/spritesheet.json',
-        levelBackground: 'assets/levels/Tilemap.png',
+        levelBackground: 'assets/levels/tilemap.png',
         levelSettings: 'assets/levels/level.json'
       }
     }

@@ -45,7 +45,9 @@ export class Game extends Container {
 
     this.addEventLesteners()
 
-    this.tileMap.initLevel(options)
+    const playerInitPosition = this.tileMap.initLevel(options)
+    this.player.initX = playerInitPosition.x
+    this.player.initY = playerInitPosition.y
 
     this.player.restart()
   }
@@ -75,21 +77,9 @@ export class Game extends Container {
     this.player = new Player({ inputHandler: this.inputHandler, textures: elvenTextures })
 
     this.camera = new Camera({ tileMap: this.tileMap })
-    const { camerabox } = this.camera
-    const { width: oldWidth, height: oldHeight } = this.player
-    this.player.addChild(camerabox)
-    const { width: newWidth, height: newHeight } = this.player
-    const addX = (newWidth - oldWidth) / 2
-    const addY = (newHeight - oldHeight) / 2
+    this.camera.watch(this.player)
 
-    this.player.children.forEach(child => {
-      if (child !== camerabox) {
-        child.position.x += addX
-        child.position.y += addY
-      }
-    })
-
-    this.addChild(this.player)
+    this.tileMap.addChild(this.player)
 
     this.startModal = new StartModal({ viewWidth, viewHeight })
     this.startModal.visible = false
@@ -111,7 +101,9 @@ export class Game extends Container {
     this.startModal.visible = false
     this.gameEnded = false
     this.time = 0
+    this.tileMap.restart()
     this.player.restart()
+    this.collider.restart()
     this.inputHandler.restart()
   }
 
