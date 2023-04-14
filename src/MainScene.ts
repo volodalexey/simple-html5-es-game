@@ -23,12 +23,11 @@ export class MainScene extends Container implements IScene {
     this.setup(options)
   }
 
-  setup ({ viewWidth, viewHeight, textures, levelSettings }: IMainSceneOptions): void {
+  setup ({ viewWidth, viewHeight, textures }: IMainSceneOptions): void {
     const game = new Game({
       viewWidth,
       viewHeight,
-      textures,
-      levelSettings
+      textures
     })
     this.addChild(game)
     this.game = game

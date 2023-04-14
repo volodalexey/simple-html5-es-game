@@ -9,8 +9,15 @@ export const manifest: ResolverManifest = {
       name: 'initial-bundle',
       assets: {
         spritesheet: 'assets/spritesheets/spritesheet.json',
-        levelBackground: 'assets/levels/tilemap.png',
-        levelSettings: 'assets/levels/level.json'
+        level1Background: 'assets/levels/level-1.png',
+        level1Settings: 'assets/levels/level-1.json'
+      }
+    },
+    {
+      name: 'level-2-bundle',
+      assets: {
+        level2Background: 'assets/levels/level-2.png',
+        level2Settings: 'assets/levels/level-2.json'
       }
     }
   ]
@@ -70,7 +77,7 @@ export class LoaderScene extends Container implements IScene {
   async initializeLoader (): Promise<void> {
     await Assets.init({ manifest })
 
-    await Assets.loadBundle(manifest.bundles.map(bundle => bundle.name), this.downloadProgress)
+    await Assets.loadBundle(manifest.bundles[0].name, this.downloadProgress)
   }
 
   private readonly downloadProgress = (progressRatio: number): void => {

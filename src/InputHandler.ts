@@ -39,7 +39,7 @@ export class InputHandler {
   }
 
   private handlePlayerMove (pressed: boolean | undefined, e: FederatedPointerEvent): void {
-    const point = this.eventTarget.toLocal(e.global)
+    const point = e.global
     logPointerEvent(`${e.type} px=${point.x} py=${point.y}`)
     this.applyPointerToDirection(pressed, point.x, point.y)
   }
@@ -163,16 +163,10 @@ export class InputHandler {
   }
 
   private applyPointerToDirection (pressed: boolean | undefined, x: number, y: number): void {
-    const { eventTarget, relativeToTarget } = this
+    const { relativeToTarget } = this
     this.pointerSpecial = false
     if (pressed === true || (pressed === undefined && this.isPointerDown())) {
-      const position = eventTarget.toLocal(relativeToTarget)
-      if (eventTarget.pivot.x !== 0) {
-        position.x -= eventTarget.pivot.x
-      }
-      if (eventTarget.pivot.y !== 0) {
-        position.y -= eventTarget.pivot.y
-      }
+      const position = relativeToTarget.getGlobalPosition()
       const bounds = relativeToTarget.getCollisionShapeBounds(position)
       const absDiffX = Math.abs(x - position.x)
       const absDiffY = Math.abs(y - position.y)

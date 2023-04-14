@@ -115,7 +115,7 @@ export abstract class MapSettings {
   }: {
     mapSettings: IMapSettings
     layerName: string
-    tileIds: number[]
+    tileIds?: number[]
   }): IPositionData[] {
     const positions: IPositionData[] = []
     const tileLayer = MapSettings.findTileLayer({ name: layerName, mapSettings })
@@ -123,7 +123,7 @@ export abstract class MapSettings {
     for (let i = 0; i < tileLayer.data.length; i += tilesPerRow) {
       const row = tileLayer.data.slice(i, i + tilesPerRow)
       row.forEach((symbol, j) => {
-        if (tileIds.includes(symbol)) {
+        if ((Array.isArray(tileIds) && tileIds.includes(symbol)) || symbol !== 0) {
           positions.push({
             x: j * mapSettings.tilewidth,
             y: i / tilesPerRow * mapSettings.tileheight,

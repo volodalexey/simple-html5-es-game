@@ -11,10 +11,16 @@ export class StatusBar extends Container {
 
   public timeText!: Text
   public timeTextShadow!: Text
+  public levelText!: Text
+  public levelTextShadow!: Text
 
   constructor () {
     super()
     this.setup()
+  }
+
+  static getLevelText (append: string | number): string {
+    return `Level: ${append}`
   }
 
   static getTimeText (append: string | number): string {
@@ -32,12 +38,29 @@ export class StatusBar extends Container {
       }
     } = StatusBar
 
+    const levelTextShadow = new Text(StatusBar.getLevelText(0), {
+      fontSize: textSize * 0.8,
+      fill: textColorShadow,
+      align: 'center'
+    })
+    levelTextShadow.position.set(0, padding)
+    this.addChild(levelTextShadow)
+    this.levelTextShadow = levelTextShadow
+    const levelText = new Text(StatusBar.getLevelText(0), {
+      fontSize: textSize * 0.8,
+      fill: textColor,
+      align: 'center'
+    })
+    levelText.position.set(0 + textShadowOffset, padding + textShadowOffset)
+    this.addChild(levelText)
+    this.levelText = levelText
+
     const timeTextShadow = new Text(StatusBar.getTimeText(0), {
       fontSize: textSize * 0.8,
       fill: textColorShadow,
       align: 'center'
     })
-    timeTextShadow.position.set(0, padding)
+    timeTextShadow.position.set(levelTextShadow.x + levelTextShadow.width + padding * 2, levelTextShadow.y)
     this.addChild(timeTextShadow)
     this.timeTextShadow = timeTextShadow
     const timeText = new Text(StatusBar.getTimeText(0), {
@@ -45,7 +68,7 @@ export class StatusBar extends Container {
       fill: textColor,
       align: 'center'
     })
-    timeText.position.set(0 + textShadowOffset, padding + textShadowOffset)
+    timeText.position.set(levelText.x + levelText.width + padding * 2, levelText.y)
     this.addChild(timeText)
     this.timeText = timeText
   }
@@ -54,5 +77,10 @@ export class StatusBar extends Container {
     const timeTxt = (time * 0.001).toFixed(1)
     this.timeText.text = StatusBar.getTimeText(timeTxt)
     this.timeTextShadow.text = StatusBar.getTimeText(timeTxt)
+  }
+
+  updateLevel (level: number): void {
+    this.levelText.text = StatusBar.getLevelText(level)
+    this.levelTextShadow.text = StatusBar.getLevelText(level)
   }
 }

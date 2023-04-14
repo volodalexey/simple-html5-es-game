@@ -1,20 +1,17 @@
-import { Container, type Texture } from 'pixi.js'
+import { Container } from 'pixi.js'
 import { type IPlayerOptions, Player } from './Player'
 import { StatusBar } from './StatusBar'
 import { StartModal } from './StartModal'
 import { InputHandler } from './InputHandler'
-import { type IMapSettings } from './MapSettings'
 import { TileMap } from './TileMap'
 import { Camera } from './Camera'
 import { Collider } from './Collider'
-import { Orc } from './Orc'
+import { logLayout } from './logger'
 
 export interface IGameOptions {
   viewWidth: number
   viewHeight: number
-  levelSettings: IMapSettings
   textures: {
-    levelBackgroundTexture: Texture
     elvenTextures: IPlayerOptions['textures']
     orcTextures: IPlayerOptions['textures']
   }
@@ -25,8 +22,12 @@ export class Game extends Container {
   public time = 0
 
   static options = {
-    maxTime: 25000
+    maxTime: 25000,
+    startLevel: 1,
+    maxLevel: 2
   }
+
+  public currentLevel = Game.options.startLevel
 
   public viewWidth: number
   public viewHeight: number
@@ -40,44 +41,31 @@ export class Game extends Container {
 
   constructor (options: IGameOptions) {
     super()
-
     this.viewWidth = options.viewWidth
     this.viewHeight = options.viewHeight
     this.setup(options)
 
     this.addEventLesteners()
 
-    const { playerPoint, orcPoints } = this.tileMap.initLevel(options)
-    this.player.initX = playerPoint.x
-    this.player.initY = playerPoint.y
+    this.runLevel()
 
-    orcPoints.forEach(orcPoint => {
-      const orc = new Orc({ textures: options.textures.orcTextures })
-      orc.initX = orcPoint.x
-      orc.initY = orcPoint.y
-      orc.setCollisionShapePosition(orcPoint)
-      this.tileMap.addChild(orc)
-
-      orc.restart()
-    })
-
-    this.player.restart()
+    setTimeout(() => {
+      void this.tileMap.idleLoad().catch(console.error)
+    }, 2000)
   }
 
   setup ({
     viewWidth,
     viewHeight,
     textures: {
-      levelBackgroundTexture,
-      elvenTextures
-    },
-    levelSettings
+      elvenTextures,
+      orcTextures
+    }
   }: IGameOptions): void {
     this.tileMap = new TileMap({
       viewWidth,
       viewHeight,
-      texture: levelBackgroundTexture,
-      levelSettings
+      orcTextures
     })
     this.addChild(this.tileMap)
 
@@ -99,10 +87,7 @@ export class Game extends Container {
 
     this.inputHandler.relativeToTarget = this.player
 
-    this.collider = new Collider({
-      staticShapes: this.tileMap.hitboxes.children,
-      bodies: [this.player]
-    })
+    this.collider = new Collider()
   }
 
   addEventLesteners (): void {
@@ -113,9 +98,7 @@ export class Game extends Container {
     this.startModal.visible = false
     this.gameEnded = false
     this.time = 0
-    this.tileMap.restart()
-    this.player.restart()
-    this.collider.restart()
+    this.runLevel()
     this.inputHandler.restart()
   }
 
@@ -131,8 +114,26 @@ export class Game extends Container {
     viewHeight: number
   }): void {
     this.tileMap.handleResize({ viewWidth, viewHeight })
-    this.statusBar.position.set(viewWidth / 2 - this.statusBar.width / 2, 0)
-    this.startModal.position.set(viewWidth / 2 - this.startModal.width / 2, viewHeight / 2 - this.startModal.height / 2)
+
+    const availableWidth = viewWidth
+    const availableHeight = viewHeight
+    const totalWidth = this.tileMap.background.width
+    const totalHeight = this.tileMap.background.height
+    const occupiedWidth = totalWidth
+    const occupiedHeight = totalHeight
+    const x = availableWidth > occupiedWidth ? (availableWidth - occupiedWidth) / 2 : 0
+    const y = availableHeight > occupiedHeight ? (availableHeight - occupiedHeight) / 2 : 0
+    logLayout(`aw=${availableWidth} (ow=${occupiedWidth}) x=${x} ah=${availableHeight} (oh=${occupiedHeight}) y=${y}`)
+    this.statusBar.visible = false
+    this.x = x
+    this.y = y
+    logLayout(`x=${x} y=${y}`)
+    this.statusBar.visible = true
+
+    const calcWidth = availableWidth > occupiedWidth ? occupiedWidth : availableWidth
+    const calcHeight = availableHeight > occupiedHeight ? occupiedHeight : availableHeight
+    this.statusBar.position.set(calcWidth / 2 - this.statusBar.width / 2, 0)
+    this.startModal.position.set(calcWidth / 2 - this.startModal.width / 2, calcHeight / 2 - this.startModal.height / 2)
   }
 
   handleUpdate (deltaMS: number): void {
@@ -146,7 +147,40 @@ export class Game extends Container {
       return
     }
     this.player.handleUpdate(deltaMS)
+    this.tileMap.handleUpdate(deltaMS)
     this.collider.handleUpdate(deltaMS)
     this.camera.handleUpdate(deltaMS)
+  }
+
+  runLevel (increment?: boolean): void {
+    if (increment === true) {
+      this.currentLevel++
+    }
+    if (this.currentLevel > Game.options.maxLevel) {
+      this.endGame()
+      return
+    }
+    this.tileMap.restart()
+    this.tileMap.cleanFromAll()
+
+    const { playerPoint } = this.tileMap.initLevel(this.currentLevel)
+    this.player.initX = playerPoint.x
+    this.player.initY = playerPoint.y
+    this.player.restart()
+
+    this.collider.restart({
+      staticShapes: this.tileMap.hitboxes.children,
+      bodies: [
+        this.player, ...this.tileMap.enemies.children
+      ],
+      levelBounds: {
+        top: 0,
+        left: 0,
+        right: this.tileMap.background.width,
+        bottom: this.tileMap.background.height
+      }
+    })
+
+    this.statusBar.updateLevel(this.currentLevel)
   }
 }

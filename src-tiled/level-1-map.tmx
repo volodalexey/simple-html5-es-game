@@ -6,7 +6,7 @@
  <properties>
   <property name="name" value="level1"/>
  </properties>
- <tileset firstgid="1" source="tileset.tsx"/>
+ <tileset firstgid="1" source="level-1-tileset.tsx"/>
  <layer id="1" name="Base" width="20" height="20">
   <data encoding="csv">
 1,21,23,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -59,7 +59,7 @@
   <object id="42" x="114" y="72" width="28" height="49"/>
  </objectgroup>
  <objectgroup id="5" name="Orcs" visible="0">
-  <object id="44" x="748" y="90" width="28" height="49"/>
+  <object id="44" x="500" y="144" width="28" height="49"/>
   <object id="47" x="1120" y="115.5" width="28" height="49"/>
   <object id="48" x="908" y="121.5" width="28" height="49"/>
   <object id="49" x="536" y="951.5" width="28" height="49"/>

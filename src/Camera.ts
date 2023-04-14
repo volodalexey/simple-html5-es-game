@@ -27,13 +27,14 @@ export class Camera {
     if (this.watchObject == null) {
       return
     }
-    const { pivot } = this.tileMap
+    const { pivot, viewWidth, viewHeight, background: { width, height } } = this.tileMap
     const { scrollEdge } = Camera.options
-    const { viewWidth, viewHeight } = this.tileMap
+    const calcWidth = viewWidth > width ? width : viewWidth
+    const calcHeight = viewHeight > height ? height : viewHeight
     const centerX = this.watchObject.x + this.watchObject.width / 2
     const centerY = this.watchObject.y + this.watchObject.height / 2
-    if (centerX > pivot.x + viewWidth - scrollEdge) {
-      pivot.x = centerX - viewWidth + scrollEdge
+    if (centerX > pivot.x + calcWidth - scrollEdge) {
+      pivot.x = centerX - calcWidth + scrollEdge
     } else if (centerX < pivot.x + scrollEdge) {
       pivot.x = centerX - scrollEdge
     }
@@ -43,8 +44,8 @@ export class Camera {
       pivot.x = this.tileMap.maxXPivot
     }
 
-    if (centerY > pivot.y + viewHeight - scrollEdge) {
-      pivot.y = centerY - viewHeight + scrollEdge
+    if (centerY > pivot.y + calcHeight - scrollEdge) {
+      pivot.y = centerY - calcHeight + scrollEdge
     } else if (centerY < pivot.y + scrollEdge) {
       pivot.y = centerY - scrollEdge
     }

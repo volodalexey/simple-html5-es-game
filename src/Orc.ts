@@ -1,3 +1,4 @@
+import { Dummy } from './AI'
 import { type IBodyOptions, Body } from './Body'
 import { EBodyState } from './BodyState'
 
@@ -6,12 +7,17 @@ export interface IOrcOptions {
 }
 
 export class Orc extends Body {
+  public ai = new Dummy()
   constructor (options: IOrcOptions) {
     super({ ...options, moveSpeed: 100 })
+    this.ai.control(this)
   }
 
   handleUpdate (deltaMS: number): void {
-    super.handleUpdate(deltaMS)
+    this.ai.handleUpdate(deltaMS)
+    if (!this.isShooting()) {
+      this.velocity.move({ object: this, dt: deltaMS })
+    }
   }
 
   restart (): void {

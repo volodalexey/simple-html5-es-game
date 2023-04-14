@@ -15,14 +15,13 @@ async function run (): Promise<void> {
   })
   await SceneManager.changeScene(loaderScene)
   await loaderScene.initializeLoader()
-  const { levelBackground, levelSettings, spritesheet: { animations } } = loaderScene.getAssets()
+  const { levelSettings, spritesheet: { animations } } = loaderScene.getAssets()
   await SceneManager.changeScene(new MainScene({
     app: SceneManager.app,
     viewWidth: SceneManager.width,
     viewHeight: SceneManager.height,
     levelSettings,
     textures: {
-      levelBackgroundTexture: levelBackground,
       elvenTextures: {
         attackLeftTextures: animations['Elven-Attack-Left'],
         attackRightTextures: animations['Elven-Attack-Right'],

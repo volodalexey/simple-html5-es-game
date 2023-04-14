@@ -1,8 +1,14 @@
 import { type Body } from './Body'
 
 export interface IColliderOptions {
-  staticShapes: IStaticShape[]
+  staticShapes?: IStaticShape[]
   bodies?: Body[]
+  levelBounds: {
+    top: number
+    right: number
+    bottom: number
+    left: number
+  }
 }
 
 interface IColliderBody {
@@ -21,13 +27,13 @@ interface IStaticShape {
 }
 
 export class Collider {
-  public staticShapes!: IColliderOptions['staticShapes']
+  public staticShapes: IStaticShape[] = []
   public bodies: IColliderBody[] = []
-  constructor ({ staticShapes, bodies }: IColliderOptions) {
-    this.staticShapes = staticShapes
-    if (Array.isArray(bodies)) {
-      bodies.forEach(body => { this.addKinematicBody(body) })
-    }
+  public levelBounds = {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
   }
 
   handleUpdate (deltaMS: number): void {
@@ -44,11 +50,13 @@ export class Collider {
     })
   }
 
-  restart (): void {
-    this.bodies.forEach(b => {
-      b.x = b.initX
-      b.y = b.initY
-    })
+  restart ({ staticShapes, bodies, levelBounds }: IColliderOptions): void {
+    this.staticShapes = Array.isArray(staticShapes) ? staticShapes : []
+    this.bodies = []
+    if (Array.isArray(bodies)) {
+      bodies.forEach(body => { this.addKinematicBody(body) })
+    }
+    Object.assign(this.levelBounds, levelBounds)
   }
 
   checkStatic (deltaMS: number): void {
@@ -57,60 +65,77 @@ export class Collider {
       const oldY = body.y
       let x = body.obj.x
       let y = body.obj.y
+      const { x: csX, y: csY, width: csW, height: csH } = body.obj.collisionShape
+      const csBounds = {
+        top: csY,
+        right: csX + csW,
+        bottom: csY + csH,
+        left: csX
+      }
       // moving right
       if (x > oldX) {
+        if (x + csBounds.right > this.levelBounds.right) {
+          x = Math.min(x + csBounds.right, this.levelBounds.right) - csX - csW
+        }
         this.staticShapes.forEach(shape => {
           if (
-            ((oldX - 1 + body.obj.collisionShape.x + body.obj.collisionShape.width) < shape.x) &&
-                      ((x + body.obj.collisionShape.x + body.obj.collisionShape.width) > shape.x) &&
-                      ((y + body.obj.collisionShape.y) < (shape.y + shape.height)) &&
-                      ((y + body.obj.collisionShape.y + body.obj.collisionShape.height) > shape.y)
+            ((oldX - 1 + csBounds.right) < shape.x) &&
+                      ((x + csBounds.right) > shape.x) &&
+                      ((y + csY) < (shape.y + shape.height)) &&
+                      ((y + csBounds.bottom) > shape.y)
           ) {
-            x = Math.min(x + body.obj.collisionShape.x + body.obj.collisionShape.width, shape.x) -
-                          body.obj.collisionShape.x - body.obj.collisionShape.width
+            x = Math.min(x + csBounds.right, shape.x) - csX - csW
           }
         })
       }
 
       // moving left
       if (x < oldX) {
+        if (x + csX < this.levelBounds.left) {
+          x = Math.max(x + csX, this.levelBounds.left) - csX
+        }
         this.staticShapes.forEach(shape => {
           if (
-            ((oldX + 1 + body.obj.collisionShape.x) > (shape.x + shape.width)) &&
-                      ((x + body.obj.collisionShape.x) < (shape.x + shape.width)) &&
-                      ((y + body.obj.collisionShape.y) < (shape.y + shape.height)) &&
-                      ((y + body.obj.collisionShape.y + body.obj.collisionShape.height) > shape.y)
+            ((oldX + 1 + csX) > (shape.x + shape.width)) &&
+                      ((x + csX) < (shape.x + shape.width)) &&
+                      ((y + csY) < (shape.y + shape.height)) &&
+                      ((y + csBounds.bottom) > shape.y)
           ) {
-            x = Math.max(x + body.obj.collisionShape.x, shape.x + shape.width) -
-                          body.obj.collisionShape.x
+            x = Math.max(x + csX, shape.x + shape.width) - csX
           }
         })
       }
 
       // moving down
       if (y > oldY) {
+        if (y + csBounds.bottom > this.levelBounds.bottom) {
+          y = Math.min(y + csBounds.bottom, this.levelBounds.bottom) - csY - csH
+        }
         this.staticShapes.forEach(shape => {
           if (
-            ((oldY - 1 + body.obj.collisionShape.y + body.obj.collisionShape.height) < shape.y) &&
-                      ((y + body.obj.collisionShape.y + body.obj.collisionShape.height) > shape.y) &&
-                     ((x + body.obj.collisionShape.x) < (shape.x + shape.width)) &&
-                     ((x + body.obj.collisionShape.x + body.obj.collisionShape.width) > shape.x)
+            ((oldY - 1 + csBounds.bottom) < shape.y) &&
+                      ((y + csBounds.bottom) > shape.y) &&
+                     ((x + csX) < (shape.x + shape.width)) &&
+                     ((x + csBounds.right) > shape.x)
           ) {
-            y = Math.min(y + body.obj.collisionShape.y + body.obj.collisionShape.height, shape.y) - body.obj.collisionShape.y - body.obj.collisionShape.height
+            y = Math.min(y + csBounds.bottom, shape.y) - csY - csH
           }
         })
       }
 
       // moving up
       if (y < oldY) {
+        if (y + csY < this.levelBounds.top) {
+          y = Math.max(y + csY, this.levelBounds.top) - csY
+        }
         this.staticShapes.forEach(shape => {
           if (
-            ((oldY + 1 + body.obj.collisionShape.y) > (shape.y + shape.height)) &&
-                      ((y + body.obj.collisionShape.y) < (shape.y + shape.height)) &&
-                     ((x + body.obj.collisionShape.x) < (shape.x + shape.width)) &&
-                     ((x + body.obj.collisionShape.x + body.obj.collisionShape.width) > shape.x)
+            ((oldY + 1 + csY) > (shape.y + shape.height)) &&
+                      ((y + csY) < (shape.y + shape.height)) &&
+                     ((x + csX) < (shape.x + shape.width)) &&
+                     ((x + csBounds.right) > shape.x)
           ) {
-            y = Math.max(y + body.obj.collisionShape.y, shape.y + shape.height) - body.obj.collisionShape.y
+            y = Math.max(y + csY, shape.y + shape.height) - csY
           }
         })
       }
