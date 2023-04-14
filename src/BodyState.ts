@@ -35,7 +35,7 @@ export class BodyState {
   }
 
   completed (): void {
-    throw new Error('completed() not implemented in child class')
+    throw new Error(`completed() not implemented in child class (state=${this.state})`)
   }
 
   handleInput (): void {

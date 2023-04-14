@@ -341,11 +341,11 @@ export class Body extends Container {
   }
 
   triggerAttackAnimationComplete = (): void => {
-    if (typeof this.currentState.completed === 'function') {
+    if (this.isAttacking()) {
       this.currentState.completed()
-    }
-    if (typeof this.onAttackCompleted === 'function') {
-      this.onAttackCompleted()
+      if (typeof this.onAttackCompleted === 'function') {
+        this.onAttackCompleted()
+      }
     }
   }
 }

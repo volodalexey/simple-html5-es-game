@@ -84,7 +84,7 @@ export class Game extends Container {
     this.camera = new Camera({ tileMap: this.tileMap })
     this.camera.watch(this.player)
 
-    this.tileMap.addChild(this.player)
+    this.tileMap.addPlayer(this.player)
 
     this.startModal = new StartModal({ viewWidth, viewHeight })
     this.startModal.visible = false
@@ -111,7 +111,7 @@ export class Game extends Container {
     this.gameEnded = true
     this.player.stop()
     this.startModal.visible = true
-    this.startModal.reasonText.text = success ? 'Win!!' : 'Time out!'
+    this.startModal.reasonText.text = success ? 'Win!!' : 'You lose!'
   }
 
   handleResize ({ viewWidth, viewHeight }: {
@@ -155,6 +155,10 @@ export class Game extends Container {
     this.tileMap.handleUpdate(deltaMS)
     this.collider.handleUpdate(deltaMS)
     this.camera.handleUpdate(deltaMS)
+
+    if (this.player.isDead()) {
+      this.endGame(false)
+    }
   }
 
   runLevel (increment?: boolean): void {

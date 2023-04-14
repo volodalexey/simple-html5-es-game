@@ -14,7 +14,7 @@ export class AI {
 
 export class Dummy extends AI {
   public direction = EVectorDirection.down
-  public changeTime = 1000
+  public changeTime = 500 + Math.trunc(1500 * Math.random())
   public elapsedTime = 0
 
   changeDirection (): void {

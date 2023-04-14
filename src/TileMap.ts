@@ -6,6 +6,8 @@ import { manifest } from './LoaderScene'
 import { type IBodyOptions } from './Body'
 import { Orc } from './Orc'
 import { type Arrow } from './Arrow'
+import { type Player } from './Player'
+import { EBodyState } from './BodyState'
 
 export interface ITileMapOptions {
   viewWidth: number
@@ -30,6 +32,7 @@ export class TileMap extends Container {
   public maxXPivot = 0
   public maxYPivot = 0
   public orcTextures !: ITileMapOptions['orcTextures']
+  public player !: Player
   constructor (options: ITileMapOptions) {
     super()
     this.viewWidth = options.viewWidth
@@ -148,12 +151,65 @@ export class TileMap extends Container {
     }
   }
 
+  addPlayer (player: Player): void {
+    this.player = player
+    this.addChild(player)
+  }
+
   handleUpdate (deltaMS: number): void {
-    this.enemies.children.forEach(e => {
-      e.handleUpdate(deltaMS)
+    const { player } = this
+    const { top, right, bottom, left } = player.getCollisionShapeBounds(player)
+    const JUMP = 30 // use level settings cell
+    const HALF_JUMP = JUMP / 2
+    const sword = 5
+    this.enemies.children.forEach(enemy => {
+      if (!player.isDead()) {
+        const enemyBounds = enemy.getCollisionShapeBounds(enemy)
+        // left tactical jump
+        if (right > enemyBounds.left - JUMP &&
+          right < enemyBounds.left &&
+          bottom > enemyBounds.top - HALF_JUMP &&
+          top < enemyBounds.bottom + HALF_JUMP) {
+          enemy.setState(EBodyState.attackLeft)
+          enemy.setCollisionShapePosition({ x: right + sword, y: top })
+          player.setState(EBodyState.deadDown)
+          return
+        }
+        // up tactical jump
+        if (bottom > enemyBounds.top - JUMP &&
+          bottom < enemyBounds.top &&
+          right > enemyBounds.left - HALF_JUMP &&
+          left < enemyBounds.right + HALF_JUMP) {
+          enemy.setState(EBodyState.attackUp)
+          enemy.setCollisionShapePosition({ x: left, y: bottom })
+          player.setState(EBodyState.deadDown)
+          return
+        }
+        // right tactical jump
+        if (left < enemyBounds.right + JUMP &&
+          left > enemyBounds.right &&
+          bottom > enemyBounds.top - HALF_JUMP &&
+          top < enemyBounds.bottom + HALF_JUMP) {
+          enemy.setState(EBodyState.attackRight)
+          enemy.setCollisionShapePosition({ x: left - sword - enemy.collisionShape.width, y: top })
+          player.setState(EBodyState.deadDown)
+          return
+        }
+        // down tactical jump
+        if (top < enemyBounds.bottom + JUMP &&
+          top > enemyBounds.bottom &&
+          right > enemyBounds.left - HALF_JUMP &&
+          left < enemyBounds.right + HALF_JUMP) {
+          enemy.setState(EBodyState.attackDown)
+          enemy.setCollisionShapePosition({ x: left, y: top - enemy.collisionShape.height })
+          player.setState(EBodyState.deadDown)
+          return
+        }
+      }
+      enemy.handleUpdate(deltaMS)
     })
-    this.arrows.children.forEach(e => {
-      e.handleUpdate(deltaMS)
+    this.arrows.children.forEach(arrow => {
+      arrow.handleUpdate(deltaMS)
     })
     for (let i = 0; i < this.arrows.children.length; i++) {
       const arrow = this.arrows.children[i]
