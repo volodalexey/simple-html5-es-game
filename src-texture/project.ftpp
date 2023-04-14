@@ -493,6 +493,336 @@
       "name": "Elven-Walk-Up-8.png",
       "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Walk-Up-8.png",
       "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Down-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Down-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Down-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Down-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Down-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Down-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Down-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Down-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Down-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Down-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Down-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Down-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Left-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Left-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Left-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Left-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Left-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Left-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Left-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Left-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Left-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Left-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Left-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Left-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Right-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Right-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Right-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Right-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Right-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Right-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Right-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Right-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Right-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Right-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Right-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Right-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Up-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Up-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Up-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Up-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Up-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Up-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Up-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Up-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Up-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Up-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Attack-Up-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Attack-Up-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Dead-Down-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Dead-Down-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Dead-Down-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Dead-Down-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Dead-Down-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Dead-Down-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Dead-Down-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Dead-Down-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Dead-Down-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Dead-Down-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Dead-Down-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Dead-Down-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-6.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-6.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-7.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-7.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Down-8.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Down-8.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-6.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-6.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-7.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-7.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Left-8.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Left-8.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-6.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-6.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-7.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-7.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Right-8.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Right-8.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-0.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-0.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-1.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-1.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-2.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-2.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-3.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-3.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-4.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-4.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-5.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-5.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-6.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-6.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-7.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-7.png",
+      "folder": ""
+    },
+    {
+      "name": "Orc-Walk-Up-8.png",
+      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Orc-Walk-Up-8.png",
+      "folder": ""
     }
   ],
   "folders": [],

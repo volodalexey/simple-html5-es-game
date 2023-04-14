@@ -39,7 +39,10 @@ export class TileMap extends Container {
     this.addChild(this.hitboxes)
   }
 
-  initLevel ({ levelSettings }: { levelSettings: IMapSettings }): IPositionData {
+  initLevel ({ levelSettings }: { levelSettings: IMapSettings }): {
+    playerPoint: IPositionData
+    orcPoints: IPositionData[]
+  } {
     const hitboxesPoints = MapSettings.mapTilesToPositions({
       mapSettings: levelSettings,
       layerName: 'Misc',
@@ -55,12 +58,20 @@ export class TileMap extends Container {
       }))
     })
 
-    const playersPoints = MapSettings.mapObjectToPositions({
+    const playerPoints = MapSettings.mapObjectToPositions({
       mapSettings: levelSettings,
       layerName: 'Player'
     })
 
-    return playersPoints[0]
+    const orcPoints = MapSettings.mapObjectToPositions({
+      mapSettings: levelSettings,
+      layerName: 'Orcs'
+    })
+
+    return {
+      playerPoint: playerPoints[0],
+      orcPoints
+    }
   }
 
   getViewportBounds (): IBoundsData {

@@ -33,6 +33,17 @@ async function run (): Promise<void> {
         walkUpTextures: animations['Elven-Walk-Up'],
         walkDownTextures: animations['Elven-Walk-Down'],
         deadDownTextures: animations['Elven-Dead-Down']
+      },
+      orcTextures: {
+        attackLeftTextures: animations['Orc-Attack-Left'],
+        attackRightTextures: animations['Orc-Attack-Right'],
+        attackUpTextures: animations['Orc-Attack-Up'],
+        attackDownTextures: animations['Orc-Attack-Down'],
+        walkLeftTextures: animations['Orc-Walk-Left'],
+        walkRightTextures: animations['Orc-Walk-Right'],
+        walkUpTextures: animations['Orc-Walk-Up'],
+        walkDownTextures: animations['Orc-Walk-Down'],
+        deadDownTextures: animations['Orc-Dead-Down']
       }
     }
   }))

@@ -6,7 +6,7 @@ import {
   DeadDown,
   type BodyState, EBodyState
 } from './BodyState'
-import { logPlayerBounds, logPlayerState } from './logger'
+import { logBodyBounds, logBodyState } from './logger'
 import { EVectorDirection, Vector } from './Vector'
 
 export interface IBodyOptions {
@@ -92,7 +92,7 @@ export class Body extends Container {
     initialRect.beginFill(0xff00ff)
     initialRect.drawRect(0, 0, this.width, this.height)
     initialRect.endFill()
-    initialRect.alpha = logPlayerBounds.enabled ? 0.5 : 0
+    initialRect.alpha = logBodyBounds.enabled ? 0.5 : 0
     this.addChild(initialRect)
     this.initialRect = initialRect
 
@@ -101,7 +101,7 @@ export class Body extends Container {
     collisionShape.beginFill(0x00ffff)
     collisionShape.drawRect(0, 0, initWidth, initHeight)
     collisionShape.endFill()
-    collisionShape.alpha = logPlayerBounds.enabled ? 0.5 : 0
+    collisionShape.alpha = logBodyBounds.enabled ? 0.5 : 0
     collisionShape.position.set(offset.x, offset.y)
     this.addChild(collisionShape)
     this.collisionShape = collisionShape
@@ -180,6 +180,8 @@ export class Body extends Container {
 
     attackLeftAnimation.animationSpeed = attackRightAnimation.animationSpeed =
     attackUpAnimation.animationSpeed = attackDownAnimation.animationSpeed = attackAnimationSpeed
+    attackLeftAnimation.loop = attackRightAnimation.loop =
+    attackUpAnimation.loop = attackDownAnimation.loop = false
 
     const walkLeftAnimation = new AnimatedSprite(walkLeftTextures)
     spritesContainer.addChild(walkLeftAnimation)
@@ -201,6 +203,7 @@ export class Body extends Container {
     walkUpAnimation.animationSpeed = walkDownAnimation.animationSpeed = walkAnimationSpeed
 
     const deadDownAnimation = new AnimatedSprite(deadDownTextures)
+    deadDownAnimation.loop = false
     spritesContainer.addChild(deadDownAnimation)
     this.deadDownAnimation = deadDownAnimation
 
@@ -276,7 +279,7 @@ export class Body extends Container {
   setState (state: EBodyState): void {
     this.currentState = this.states[state]
     this.currentState.enter()
-    logPlayerState(`state=${state}`)
+    logBodyState(`state=${state}`)
   }
 
   stop (): void {

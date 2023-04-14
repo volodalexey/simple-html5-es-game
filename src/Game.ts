@@ -7,6 +7,7 @@ import { type IMapSettings } from './MapSettings'
 import { TileMap } from './TileMap'
 import { Camera } from './Camera'
 import { Collider } from './Collider'
+import { Orc } from './Orc'
 
 export interface IGameOptions {
   viewWidth: number
@@ -15,6 +16,7 @@ export interface IGameOptions {
   textures: {
     levelBackgroundTexture: Texture
     elvenTextures: IPlayerOptions['textures']
+    orcTextures: IPlayerOptions['textures']
   }
 }
 
@@ -45,9 +47,19 @@ export class Game extends Container {
 
     this.addEventLesteners()
 
-    const playerInitPosition = this.tileMap.initLevel(options)
-    this.player.initX = playerInitPosition.x
-    this.player.initY = playerInitPosition.y
+    const { playerPoint, orcPoints } = this.tileMap.initLevel(options)
+    this.player.initX = playerPoint.x
+    this.player.initY = playerPoint.y
+
+    orcPoints.forEach(orcPoint => {
+      const orc = new Orc({ textures: options.textures.orcTextures })
+      orc.initX = orcPoint.x
+      orc.initY = orcPoint.y
+      orc.setCollisionShapePosition(orcPoint)
+      this.tileMap.addChild(orc)
+
+      orc.restart()
+    })
 
     this.player.restart()
   }

@@ -167,6 +167,12 @@ export class InputHandler {
     this.pointerSpecial = false
     if (pressed === true || (pressed === undefined && this.isPointerDown())) {
       const position = eventTarget.toLocal(relativeToTarget)
+      if (eventTarget.pivot.x !== 0) {
+        position.x -= eventTarget.pivot.x
+      }
+      if (eventTarget.pivot.y !== 0) {
+        position.y -= eventTarget.pivot.y
+      }
       const bounds = relativeToTarget.getCollisionShapeBounds(position)
       const absDiffX = Math.abs(x - position.x)
       const absDiffY = Math.abs(y - position.y)

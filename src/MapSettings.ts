@@ -101,8 +101,7 @@ export abstract class MapSettings {
   }): IPositionData[] {
     const positions: IPositionData[] = []
     const tileLayer = MapSettings.findObjectGroupLayer({ name: layerName, mapSettings })
-    const tilesPerRow = mapSettings.width
-    for (let i = 0; i < tileLayer.objects.length; i += tilesPerRow) {
+    for (let i = 0; i < tileLayer.objects.length; i++) {
       const object = tileLayer.objects[i]
       positions.push({ x: object.x, y: object.y, width: object.width, height: object.height })
     }
