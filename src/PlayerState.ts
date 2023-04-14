@@ -7,6 +7,7 @@ import {
 } from './BodyState'
 import { type InputHandler } from './InputHandler'
 import { type Player } from './Player'
+import { logPlayerState } from './logger'
 
 interface IPlayerStateChildOptions {
   player: Player
@@ -19,6 +20,11 @@ export class PlayerStandUp extends StandUp {
   constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
     super({ body: player })
     this.inputHandler = inputHandler
+  }
+
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
   }
 
   handleInput (): void {
@@ -45,6 +51,11 @@ export class PlayerStandRight extends StandRight {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
@@ -67,6 +78,11 @@ export class PlayerStandDown extends StandDown {
   constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
     super({ body: player })
     this.inputHandler = inputHandler
+  }
+
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
   }
 
   handleInput (): void {
@@ -93,6 +109,11 @@ export class PlayerStandLeft extends StandLeft {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
@@ -115,6 +136,11 @@ export class PlayerWalkUp extends WalkUp {
   constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
     super({ body: player })
     this.inputHandler = inputHandler
+  }
+
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
   }
 
   handleInput (): void {
@@ -141,6 +167,11 @@ export class PlayerWalkRight extends WalkRight {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
@@ -163,6 +194,11 @@ export class PlayerWalkDown extends WalkDown {
   constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
     super({ body: player })
     this.inputHandler = inputHandler
+  }
+
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
   }
 
   handleInput (): void {
@@ -189,6 +225,11 @@ export class PlayerWalkLeft extends WalkLeft {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasDirectionUp()) {
@@ -213,6 +254,11 @@ export class PlayerAttackUp extends AttackUp {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
@@ -233,8 +279,6 @@ export class PlayerAttackUp extends AttackUp {
       body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
       body.setState(EBodyState.walkLeft)
-    } else {
-      body.setState(EBodyState.standUp)
     }
   }
 }
@@ -247,6 +291,11 @@ export class PlayerAttackRight extends AttackRight {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
@@ -267,8 +316,6 @@ export class PlayerAttackRight extends AttackRight {
       body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
       body.setState(EBodyState.walkLeft)
-    } else {
-      body.setState(EBodyState.standRight)
     }
   }
 }
@@ -281,6 +328,11 @@ export class PlayerAttackDown extends AttackDown {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
@@ -301,8 +353,6 @@ export class PlayerAttackDown extends AttackDown {
       body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
       body.setState(EBodyState.walkLeft)
-    } else {
-      body.setState(EBodyState.standDown)
     }
   }
 }
@@ -315,6 +365,11 @@ export class PlayerAttackLeft extends AttackLeft {
     this.inputHandler = inputHandler
   }
 
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
+
   handleInput (): void {
     const { inputHandler, body } = this
     if (inputHandler.hasSpecial()) {
@@ -335,14 +390,17 @@ export class PlayerAttackLeft extends AttackLeft {
       body.setState(EBodyState.walkDown)
     } else if (inputHandler.hasDirectionLeft()) {
       body.setState(EBodyState.walkLeft)
-    } else {
-      body.setState(EBodyState.standLeft)
     }
   }
 }
 
 export class PlayerDeadDown extends DeadDown {
   public inputHandler !: InputHandler
+
+  enter (state: EBodyState): void {
+    super.enter(state)
+    logPlayerState(`state=${state}`)
+  }
 
   constructor ({ player, inputHandler }: IPlayerStateChildOptions) {
     super({ body: player })

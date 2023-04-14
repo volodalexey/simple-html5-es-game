@@ -48,34 +48,10 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Up-11.png": {
+    "Elven-Attack-Up-07.png": {
       "frame": {
         "x": 60,
         "y": 1,
-        "w": 26,
-        "h": 60
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 4,
-        "w": 26,
-        "h": 60
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Up-07.png": {
-      "frame": {
-        "x": 1,
-        "y": 63,
         "w": 29,
         "h": 60
       },
@@ -98,7 +74,7 @@
     },
     "Elven-Attack-Up-06.png": {
       "frame": {
-        "x": 32,
+        "x": 1,
         "y": 63,
         "w": 28,
         "h": 59
@@ -122,8 +98,8 @@
     },
     "Elven-Attack-Up-05.png": {
       "frame": {
-        "x": 88,
-        "y": 1,
+        "x": 31,
+        "y": 63,
         "w": 27,
         "h": 58
       },
@@ -146,8 +122,8 @@
     },
     "Elven-Attack-Up-08.png": {
       "frame": {
-        "x": 62,
-        "y": 63,
+        "x": 91,
+        "y": 1,
         "w": 30,
         "h": 57
       },
@@ -170,8 +146,8 @@
     },
     "Elven-Attack-Left-06.png": {
       "frame": {
-        "x": 117,
-        "y": 1,
+        "x": 60,
+        "y": 63,
         "w": 44,
         "h": 56
       },
@@ -194,8 +170,8 @@
     },
     "Elven-Attack-Right-06.png": {
       "frame": {
-        "x": 94,
-        "y": 61,
+        "x": 123,
+        "y": 1,
         "w": 45,
         "h": 56
       },
@@ -218,8 +194,8 @@
     },
     "Elven-Attack-Up-04.png": {
       "frame": {
-        "x": 1,
-        "y": 125,
+        "x": 106,
+        "y": 60,
         "w": 29,
         "h": 55
       },
@@ -240,34 +216,10 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Left-05.png": {
-      "frame": {
-        "x": 32,
-        "y": 124,
-        "w": 44,
-        "h": 54
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 9,
-        "w": 44,
-        "h": 54
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Elven-Attack-Right-05.png": {
       "frame": {
-        "x": 78,
-        "y": 122,
+        "x": 1,
+        "y": 124,
         "w": 45,
         "h": 54
       },
@@ -288,9 +240,57 @@
         "y": 0.5
       }
     },
+    "Elven-Attack-Left-05.png": {
+      "frame": {
+        "x": 48,
+        "y": 123,
+        "w": 44,
+        "h": 54
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 9,
+        "w": 44,
+        "h": 54
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Attack-Right-07.png": {
+      "frame": {
+        "x": 94,
+        "y": 121,
+        "w": 45,
+        "h": 54
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 9,
+        "w": 45,
+        "h": 54
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Attack-Left-07.png": {
       "frame": {
-        "x": 163,
+        "x": 170,
         "y": 1,
         "w": 44,
         "h": 54
@@ -312,20 +312,20 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Right-07.png": {
+    "Elven-Attack-Up-03.png": {
       "frame": {
-        "x": 125,
-        "y": 119,
-        "w": 45,
-        "h": 54
+        "x": 137,
+        "y": 59,
+        "w": 26,
+        "h": 52
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 15,
-        "y": 9,
-        "w": 45,
-        "h": 54
+        "x": 18,
+        "y": 12,
+        "w": 26,
+        "h": 52
       },
       "sourceSize": {
         "w": 64,
@@ -338,7 +338,7 @@
     },
     "Elven-Attack-Right-10.png": {
       "frame": {
-        "x": 172,
+        "x": 170,
         "y": 57,
         "w": 34,
         "h": 52
@@ -360,10 +360,10 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Right-11.png": {
+    "Elven-Attack-Right-09.png": {
       "frame": {
-        "x": 172,
-        "y": 111,
+        "x": 141,
+        "y": 113,
         "w": 35,
         "h": 52
       },
@@ -384,19 +384,19 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Right-12.png": {
+    "Elven-Attack-Left-10.png": {
       "frame": {
-        "x": 1,
-        "y": 182,
-        "w": 39,
+        "x": 178,
+        "y": 111,
+        "w": 34,
         "h": 52
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 17,
+        "x": 12,
         "y": 11,
-        "w": 39,
+        "w": 34,
         "h": 52
       },
       "sourceSize": {
@@ -410,56 +410,8 @@
     },
     "Elven-Attack-Left-09.png": {
       "frame": {
-        "x": 172,
-        "y": 165,
-        "w": 35,
-        "h": 52
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 12,
-        "y": 11,
-        "w": 35,
-        "h": 52
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Left-10.png": {
-      "frame": {
-        "x": 42,
+        "x": 1,
         "y": 180,
-        "w": 34,
-        "h": 52
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 12,
-        "y": 11,
-        "w": 34,
-        "h": 52
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Left-11.png": {
-      "frame": {
-        "x": 78,
-        "y": 178,
         "w": 35,
         "h": 52
       },
@@ -469,30 +421,6 @@
         "x": 12,
         "y": 11,
         "w": 35,
-        "h": 52
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Left-12.png": {
-      "frame": {
-        "x": 115,
-        "y": 178,
-        "w": 38,
-        "h": 52
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 8,
-        "y": 11,
-        "w": 38,
         "h": 52
       },
       "sourceSize": {
@@ -506,8 +434,8 @@
     },
     "Elven-Walk-Left-5.png": {
       "frame": {
-        "x": 141,
-        "y": 59,
+        "x": 38,
+        "y": 180,
         "w": 27,
         "h": 52
       },
@@ -530,8 +458,8 @@
     },
     "Elven-Walk-Left-6.png": {
       "frame": {
-        "x": 208,
-        "y": 57,
+        "x": 67,
+        "y": 179,
         "w": 26,
         "h": 52
       },
@@ -552,44 +480,20 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Up-03.png": {
+    "Elven-Attack-Left-04.png": {
       "frame": {
-        "x": 209,
-        "y": 1,
-        "w": 26,
-        "h": 52
+        "x": 95,
+        "y": 177,
+        "w": 42,
+        "h": 51
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
+        "x": 5,
         "y": 12,
-        "w": 26,
-        "h": 52
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Right-09.png": {
-      "frame": {
-        "x": 1,
-        "y": 236,
-        "w": 35,
-        "h": 52
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 16,
-        "y": 11,
-        "w": 35,
-        "h": 52
+        "w": 42,
+        "h": 51
       },
       "sourceSize": {
         "w": 64,
@@ -602,8 +506,8 @@
     },
     "Elven-Walk-Right-8.png": {
       "frame": {
-        "x": 38,
-        "y": 236,
+        "x": 139,
+        "y": 177,
         "w": 24,
         "h": 51
       },
@@ -611,30 +515,6 @@
       "trimmed": true,
       "spriteSourceSize": {
         "x": 20,
-        "y": 12,
-        "w": 24,
-        "h": 51
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Left-0.png": {
-      "frame": {
-        "x": 209,
-        "y": 111,
-        "w": 24,
-        "h": 51
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 19,
         "y": 12,
         "w": 24,
         "h": 51
@@ -650,8 +530,8 @@
     },
     "Elven-Walk-Left-1.png": {
       "frame": {
-        "x": 209,
-        "y": 164,
+        "x": 178,
+        "y": 165,
         "w": 24,
         "h": 51
       },
@@ -674,8 +554,8 @@
     },
     "Elven-Walk-Left-2.png": {
       "frame": {
-        "x": 209,
-        "y": 217,
+        "x": 216,
+        "y": 1,
         "w": 24,
         "h": 51
       },
@@ -698,8 +578,8 @@
     },
     "Elven-Walk-Left-4.png": {
       "frame": {
-        "x": 64,
-        "y": 234,
+        "x": 214,
+        "y": 57,
         "w": 26,
         "h": 51
       },
@@ -720,10 +600,34 @@
         "y": 0.5
       }
     },
+    "Elven-Walk-Left-8.png": {
+      "frame": {
+        "x": 214,
+        "y": 110,
+        "w": 24,
+        "h": 51
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 12,
+        "w": 24,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Attack-Right-04.png": {
       "frame": {
-        "x": 92,
-        "y": 232,
+        "x": 1,
+        "y": 234,
         "w": 43,
         "h": 51
       },
@@ -744,34 +648,10 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Left-04.png": {
-      "frame": {
-        "x": 137,
-        "y": 232,
-        "w": 42,
-        "h": 51
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 5,
-        "y": 12,
-        "w": 42,
-        "h": 51
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Elven-Walk-Left-7.png": {
       "frame": {
-        "x": 181,
-        "y": 219,
+        "x": 46,
+        "y": 234,
         "w": 24,
         "h": 51
       },
@@ -792,44 +672,20 @@
         "y": 0.5
       }
     },
-    "Elven-Walk-Left-8.png": {
+    "Elven-Walk-Left-0.png": {
       "frame": {
-        "x": 237,
-        "y": 1,
+        "x": 72,
+        "y": 233,
         "w": 24,
         "h": 51
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
+        "x": 19,
         "y": 12,
         "w": 24,
         "h": 51
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Left-01.png": {
-      "frame": {
-        "x": 263,
-        "y": 1,
-        "w": 37,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 12,
-        "y": 13,
-        "w": 37,
-        "h": 50
       },
       "sourceSize": {
         "w": 64,
@@ -842,8 +698,8 @@
     },
     "Elven-Attack-Left-02.png": {
       "frame": {
-        "x": 237,
-        "y": 54,
+        "x": 98,
+        "y": 230,
         "w": 38,
         "h": 50
       },
@@ -866,8 +722,8 @@
     },
     "Elven-Attack-Right-00.png": {
       "frame": {
-        "x": 236,
-        "y": 106,
+        "x": 138,
+        "y": 230,
         "w": 44,
         "h": 50
       },
@@ -890,8 +746,8 @@
     },
     "Elven-Attack-Right-01.png": {
       "frame": {
-        "x": 235,
-        "y": 158,
+        "x": 184,
+        "y": 218,
         "w": 37,
         "h": 50
       },
@@ -914,8 +770,8 @@
     },
     "Elven-Attack-Right-02.png": {
       "frame": {
-        "x": 235,
-        "y": 210,
+        "x": 242,
+        "y": 1,
         "w": 39,
         "h": 50
       },
@@ -938,8 +794,8 @@
     },
     "Elven-Walk-Right-7.png": {
       "frame": {
-        "x": 274,
-        "y": 158,
+        "x": 204,
+        "y": 165,
         "w": 24,
         "h": 50
       },
@@ -962,8 +818,8 @@
     },
     "Elven-Walk-Right-6.png": {
       "frame": {
-        "x": 1,
-        "y": 290,
+        "x": 242,
+        "y": 53,
         "w": 26,
         "h": 50
       },
@@ -984,10 +840,58 @@
         "y": 0.5
       }
     },
+    "Elven-Walk-Right-5.png": {
+      "frame": {
+        "x": 242,
+        "y": 105,
+        "w": 27,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 14,
+        "w": 27,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Right-4.png": {
+      "frame": {
+        "x": 240,
+        "y": 157,
+        "w": 26,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 13,
+        "w": 26,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Attack-Down-04.png": {
       "frame": {
-        "x": 29,
-        "y": 290,
+        "x": 223,
+        "y": 217,
         "w": 25,
         "h": 50
       },
@@ -1010,8 +914,8 @@
     },
     "Elven-Attack-Down-09.png": {
       "frame": {
-        "x": 56,
-        "y": 289,
+        "x": 250,
+        "y": 209,
         "w": 25,
         "h": 50
       },
@@ -1034,8 +938,8 @@
     },
     "Elven-Attack-Down-03.png": {
       "frame": {
-        "x": 83,
-        "y": 287,
+        "x": 270,
+        "y": 53,
         "w": 26,
         "h": 50
       },
@@ -1056,34 +960,10 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Right-08.png": {
-      "frame": {
-        "x": 111,
-        "y": 285,
-        "w": 44,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 13,
-        "y": 13,
-        "w": 44,
-        "h": 50
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Elven-Walk-Left-3.png": {
       "frame": {
-        "x": 276,
-        "y": 210,
+        "x": 268,
+        "y": 157,
         "w": 24,
         "h": 50
       },
@@ -1104,82 +984,34 @@
         "y": 0.5
       }
     },
+    "Elven-Attack-Right-08.png": {
+      "frame": {
+        "x": 1,
+        "y": 287,
+        "w": 44,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 13,
+        "w": 44,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Attack-Down-10.png": {
       "frame": {
-        "x": 157,
-        "y": 285,
-        "w": 26,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 14,
-        "w": 26,
-        "h": 50
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Down-11.png": {
-      "frame": {
-        "x": 185,
-        "y": 272,
-        "w": 25,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 19,
-        "y": 14,
-        "w": 25,
-        "h": 50
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Left-08.png": {
-      "frame": {
-        "x": 212,
-        "y": 270,
-        "w": 43,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 7,
-        "y": 13,
-        "w": 43,
-        "h": 50
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Down-12.png": {
-      "frame": {
-        "x": 257,
-        "y": 262,
+        "x": 283,
+        "y": 1,
         "w": 26,
         "h": 50
       },
@@ -1202,8 +1034,8 @@
     },
     "Elven-Attack-Left-00.png": {
       "frame": {
-        "x": 302,
-        "y": 1,
+        "x": 47,
+        "y": 287,
         "w": 44,
         "h": 50
       },
@@ -1224,10 +1056,58 @@
         "y": 0.5
       }
     },
+    "Elven-Attack-Left-08.png": {
+      "frame": {
+        "x": 93,
+        "y": 286,
+        "w": 43,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 13,
+        "w": 43,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Attack-Left-01.png": {
+      "frame": {
+        "x": 271,
+        "y": 105,
+        "w": 37,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 13,
+        "w": 37,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Walk-Right-0.png": {
       "frame": {
-        "x": 277,
-        "y": 53,
+        "x": 138,
+        "y": 282,
         "w": 25,
         "h": 50
       },
@@ -1248,58 +1128,10 @@
         "y": 0.5
       }
     },
-    "Elven-Walk-Right-4.png": {
-      "frame": {
-        "x": 282,
-        "y": 105,
-        "w": 26,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 13,
-        "w": 26,
-        "h": 50
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Right-5.png": {
-      "frame": {
-        "x": 304,
-        "y": 53,
-        "w": 27,
-        "h": 50
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 14,
-        "w": 27,
-        "h": 50
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Elven-Attack-Up-00.png": {
       "frame": {
-        "x": 302,
-        "y": 157,
+        "x": 165,
+        "y": 282,
         "w": 43,
         "h": 49
       },
@@ -1320,10 +1152,106 @@
         "y": 0.5
       }
     },
+    "Elven-Attack-Up-01.png": {
+      "frame": {
+        "x": 210,
+        "y": 270,
+        "w": 39,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 14,
+        "w": 39,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Right-3.png": {
+      "frame": {
+        "x": 277,
+        "y": 209,
+        "w": 24,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 13,
+        "w": 24,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Right-2.png": {
+      "frame": {
+        "x": 277,
+        "y": 260,
+        "w": 24,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 14,
+        "w": 24,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Down-1.png": {
+      "frame": {
+        "x": 311,
+        "y": 1,
+        "w": 28,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 14,
+        "w": 28,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Walk-Down-2.png": {
       "frame": {
-        "x": 310,
-        "y": 105,
+        "x": 298,
+        "y": 53,
         "w": 27,
         "h": 49
       },
@@ -1346,8 +1274,8 @@
     },
     "Elven-Walk-Down-3.png": {
       "frame": {
-        "x": 302,
-        "y": 208,
+        "x": 294,
+        "y": 157,
         "w": 26,
         "h": 49
       },
@@ -1370,8 +1298,8 @@
     },
     "Elven-Walk-Down-4.png": {
       "frame": {
-        "x": 302,
-        "y": 259,
+        "x": 310,
+        "y": 104,
         "w": 28,
         "h": 49
       },
@@ -1394,8 +1322,8 @@
     },
     "Elven-Walk-Down-5.png": {
       "frame": {
-        "x": 1,
-        "y": 342,
+        "x": 303,
+        "y": 208,
         "w": 28,
         "h": 49
       },
@@ -1418,8 +1346,8 @@
     },
     "Elven-Walk-Down-6.png": {
       "frame": {
-        "x": 31,
-        "y": 342,
+        "x": 303,
+        "y": 259,
         "w": 27,
         "h": 49
       },
@@ -1442,8 +1370,8 @@
     },
     "Elven-Walk-Down-7.png": {
       "frame": {
-        "x": 60,
-        "y": 341,
+        "x": 1,
+        "y": 339,
         "w": 26,
         "h": 49
       },
@@ -1466,7 +1394,7 @@
     },
     "Elven-Walk-Down-8.png": {
       "frame": {
-        "x": 88,
+        "x": 29,
         "y": 339,
         "w": 28,
         "h": 49
@@ -1490,8 +1418,8 @@
     },
     "Elven-Attack-Up-02.png": {
       "frame": {
-        "x": 118,
-        "y": 337,
+        "x": 303,
+        "y": 310,
         "w": 36,
         "h": 49
       },
@@ -1514,8 +1442,8 @@
     },
     "Elven-Attack-Down-01.png": {
       "frame": {
-        "x": 156,
-        "y": 337,
+        "x": 59,
+        "y": 339,
         "w": 34,
         "h": 49
       },
@@ -1536,10 +1464,82 @@
         "y": 0.5
       }
     },
+    "Elven-Attack-Down-02.png": {
+      "frame": {
+        "x": 95,
+        "y": 338,
+        "w": 36,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 14,
+        "w": 36,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Down-0.png": {
+      "frame": {
+        "x": 133,
+        "y": 338,
+        "w": 28,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 14,
+        "w": 28,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Attack-Down-00.png": {
+      "frame": {
+        "x": 163,
+        "y": 334,
+        "w": 39,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 14,
+        "w": 39,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Elven-Attack-Down-05.png": {
       "frame": {
-        "x": 192,
-        "y": 324,
+        "x": 204,
+        "y": 333,
         "w": 25,
         "h": 49
       },
@@ -1562,8 +1562,8 @@
     },
     "Elven-Attack-Down-06.png": {
       "frame": {
-        "x": 219,
-        "y": 322,
+        "x": 231,
+        "y": 321,
         "w": 25,
         "h": 49
       },
@@ -1586,8 +1586,8 @@
     },
     "Elven-Attack-Down-07.png": {
       "frame": {
-        "x": 246,
-        "y": 322,
+        "x": 258,
+        "y": 311,
         "w": 26,
         "h": 49
       },
@@ -1610,8 +1610,8 @@
     },
     "Elven-Attack-Down-08.png": {
       "frame": {
-        "x": 274,
-        "y": 314,
+        "x": 332,
+        "y": 259,
         "w": 26,
         "h": 49
       },
@@ -1632,154 +1632,10 @@
         "y": 0.5
       }
     },
-    "Elven-Attack-Down-02.png": {
-      "frame": {
-        "x": 302,
-        "y": 310,
-        "w": 36,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 13,
-        "y": 14,
-        "w": 36,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Right-2.png": {
-      "frame": {
-        "x": 330,
-        "y": 208,
-        "w": 24,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 14,
-        "w": 24,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Down-00.png": {
-      "frame": {
-        "x": 333,
-        "y": 53,
-        "w": 39,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 15,
-        "y": 14,
-        "w": 39,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Up-01.png": {
-      "frame": {
-        "x": 332,
-        "y": 259,
-        "w": 39,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 11,
-        "y": 14,
-        "w": 39,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Right-1.png": {
-      "frame": {
-        "x": 348,
-        "y": 1,
-        "w": 24,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 14,
-        "w": 24,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Right-3.png": {
-      "frame": {
-        "x": 347,
-        "y": 104,
-        "w": 24,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 13,
-        "w": 24,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Elven-Dead-Down-0.png": {
       "frame": {
-        "x": 340,
-        "y": 310,
+        "x": 327,
+        "y": 52,
         "w": 28,
         "h": 49
       },
@@ -1800,43 +1656,19 @@
         "y": 0.5
       }
     },
-    "Elven-Walk-Down-0.png": {
+    "Elven-Walk-Right-1.png": {
       "frame": {
-        "x": 374,
+        "x": 341,
         "y": 1,
-        "w": 28,
+        "w": 24,
         "h": 49
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
+        "x": 20,
         "y": 14,
-        "w": 28,
-        "h": 49
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Down-1.png": {
-      "frame": {
-        "x": 374,
-        "y": 52,
-        "w": 28,
-        "h": 49
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 14,
-        "w": 28,
+        "w": 24,
         "h": 49
       },
       "sourceSize": {
@@ -1850,7 +1682,7 @@
     },
     "Elven-Attack-Right-03.png": {
       "frame": {
-        "x": 347,
+        "x": 322,
         "y": 155,
         "w": 39,
         "h": 48
@@ -1874,8 +1706,8 @@
     },
     "Elven-Attack-Left-03.png": {
       "frame": {
-        "x": 356,
-        "y": 205,
+        "x": 367,
+        "y": 1,
         "w": 38,
         "h": 48
       },
@@ -1898,8 +1730,8 @@
     },
     "Elven-Walk-Up-3.png": {
       "frame": {
-        "x": 373,
-        "y": 104,
+        "x": 340,
+        "y": 103,
         "w": 26,
         "h": 48
       },
@@ -1922,8 +1754,8 @@
     },
     "Elven-Walk-Up-7.png": {
       "frame": {
-        "x": 373,
-        "y": 255,
+        "x": 357,
+        "y": 52,
         "w": 26,
         "h": 48
       },
@@ -1944,10 +1776,58 @@
         "y": 0.5
       }
     },
-    "Orc-Walk-Down-8.png": {
+    "Elven-Walk-Up-8.png": {
       "frame": {
-        "x": 370,
-        "y": 310,
+        "x": 333,
+        "y": 205,
+        "w": 28,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 16,
+        "w": 28,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Dead-Down-0.png": {
+      "frame": {
+        "x": 368,
+        "y": 102,
+        "w": 30,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 17,
+        "w": 30,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Walk-Down-0.png": {
+      "frame": {
+        "x": 368,
+        "y": 151,
         "w": 30,
         "h": 47
       },
@@ -1970,32 +1850,8 @@
     },
     "Orc-Walk-Down-4.png": {
       "frame": {
-        "x": 1,
-        "y": 393,
-        "w": 30,
-        "h": 47
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 17,
-        "w": 30,
-        "h": 47
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Dead-Down-0.png": {
-      "frame": {
-        "x": 33,
-        "y": 393,
+        "x": 363,
+        "y": 200,
         "w": 30,
         "h": 47
       },
@@ -2018,8 +1874,8 @@
     },
     "Orc-Walk-Down-5.png": {
       "frame": {
-        "x": 65,
-        "y": 392,
+        "x": 363,
+        "y": 249,
         "w": 30,
         "h": 47
       },
@@ -2040,9 +1896,81 @@
         "y": 0.5
       }
     },
+    "Elven-Walk-Up-2.png": {
+      "frame": {
+        "x": 360,
+        "y": 298,
+        "w": 26,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 16,
+        "w": 26,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Dead-Down-1.png": {
+      "frame": {
+        "x": 1,
+        "y": 390,
+        "w": 27,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 15,
+        "w": 27,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Up-4.png": {
+      "frame": {
+        "x": 30,
+        "y": 390,
+        "w": 28,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 16,
+        "w": 28,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Orc-Attack-Down-1.png": {
       "frame": {
-        "x": 97,
+        "x": 60,
         "y": 390,
         "w": 27,
         "h": 47
@@ -2064,106 +1992,10 @@
         "y": 0.5
       }
     },
-    "Elven-Walk-Up-2.png": {
-      "frame": {
-        "x": 126,
-        "y": 388,
-        "w": 26,
-        "h": 47
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 19,
-        "y": 16,
-        "w": 26,
-        "h": 47
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Walk-Down-0.png": {
-      "frame": {
-        "x": 370,
-        "y": 359,
-        "w": 30,
-        "h": 47
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 17,
-        "w": 30,
-        "h": 47
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Walk-Up-4.png": {
-      "frame": {
-        "x": 154,
-        "y": 388,
-        "w": 28,
-        "h": 47
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 16,
-        "w": 28,
-        "h": 47
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Attack-Down-0.png": {
-      "frame": {
-        "x": 184,
-        "y": 388,
-        "w": 30,
-        "h": 47
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 17,
-        "w": 30,
-        "h": 47
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Elven-Walk-Up-6.png": {
       "frame": {
-        "x": 216,
-        "y": 375,
+        "x": 89,
+        "y": 390,
         "w": 26,
         "h": 47
       },
@@ -2186,8 +2018,8 @@
     },
     "Orc-Walk-Down-1.png": {
       "frame": {
-        "x": 244,
-        "y": 373,
+        "x": 117,
+        "y": 389,
         "w": 30,
         "h": 47
       },
@@ -2208,19 +2040,19 @@
         "y": 0.5
       }
     },
-    "Elven-Walk-Up-8.png": {
+    "Orc-Walk-Down-8.png": {
       "frame": {
-        "x": 276,
-        "y": 365,
-        "w": 28,
+        "x": 149,
+        "y": 389,
+        "w": 30,
         "h": 47
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
-        "y": 16,
-        "w": 28,
+        "x": 17,
+        "y": 17,
+        "w": 30,
         "h": 47
       },
       "sourceSize": {
@@ -2232,20 +2064,44 @@
         "y": 0.5
       }
     },
-    "Elven-Dead-Down-1.png": {
+    "Orc-Attack-Down-0.png": {
       "frame": {
-        "x": 306,
-        "y": 361,
-        "w": 27,
+        "x": 181,
+        "y": 385,
+        "w": 30,
         "h": 47
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 15,
-        "w": 27,
+        "x": 17,
+        "y": 17,
+        "w": 30,
         "h": 47
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Elven-Walk-Up-0.png": {
+      "frame": {
+        "x": 213,
+        "y": 384,
+        "w": 28,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 16,
+        "w": 28,
+        "h": 46
       },
       "sourceSize": {
         "w": 64,
@@ -2258,8 +2114,8 @@
     },
     "Elven-Walk-Up-5.png": {
       "frame": {
-        "x": 335,
-        "y": 361,
+        "x": 243,
+        "y": 372,
         "w": 28,
         "h": 46
       },
@@ -2282,8 +2138,8 @@
     },
     "Orc-Dead-Down-1.png": {
       "frame": {
-        "x": 404,
-        "y": 1,
+        "x": 273,
+        "y": 362,
         "w": 31,
         "h": 46
       },
@@ -2304,34 +2160,10 @@
         "y": 0.5
       }
     },
-    "Orc-Walk-Down-2.png": {
-      "frame": {
-        "x": 404,
-        "y": 49,
-        "w": 30,
-        "h": 46
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 17,
-        "w": 30,
-        "h": 46
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
     "Orc-Attack-Down-4.png": {
       "frame": {
-        "x": 388,
-        "y": 154,
+        "x": 306,
+        "y": 361,
         "w": 35,
         "h": 46
       },
@@ -2354,8 +2186,8 @@
     },
     "Orc-Attack-Down-5.png": {
       "frame": {
-        "x": 437,
-        "y": 1,
+        "x": 343,
+        "y": 347,
         "w": 44,
         "h": 46
       },
@@ -2378,8 +2210,8 @@
     },
     "Orc-Walk-Down-6.png": {
       "frame": {
-        "x": 401,
-        "y": 103,
+        "x": 388,
+        "y": 298,
         "w": 30,
         "h": 46
       },
@@ -2402,8 +2234,8 @@
     },
     "Elven-Walk-Up-1.png": {
       "frame": {
-        "x": 396,
-        "y": 202,
+        "x": 385,
+        "y": 51,
         "w": 28,
         "h": 46
       },
@@ -2426,8 +2258,8 @@
     },
     "Orc-Walk-Down-7.png": {
       "frame": {
-        "x": 425,
-        "y": 151,
+        "x": 407,
+        "y": 1,
         "w": 29,
         "h": 46
       },
@@ -2450,8 +2282,8 @@
     },
     "Orc-Walk-Down-3.png": {
       "frame": {
-        "x": 433,
-        "y": 97,
+        "x": 400,
+        "y": 99,
         "w": 29,
         "h": 46
       },
@@ -2472,92 +2304,20 @@
         "y": 0.5
       }
     },
-    "Elven-Walk-Up-0.png": {
+    "Orc-Walk-Down-2.png": {
       "frame": {
-        "x": 436,
-        "y": 49,
-        "w": 28,
+        "x": 400,
+        "y": 147,
+        "w": 30,
         "h": 46
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 16,
-        "w": 28,
-        "h": 46
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Attack-Down-3.png": {
-      "frame": {
-        "x": 401,
-        "y": 250,
-        "w": 26,
-        "h": 45
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 18,
-        "w": 26,
-        "h": 45
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Walk-Up-3.png": {
-      "frame": {
-        "x": 426,
-        "y": 199,
-        "w": 29,
-        "h": 45
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
         "x": 17,
-        "y": 18,
-        "w": 29,
-        "h": 45
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Walk-Up-7.png": {
-      "frame": {
-        "x": 429,
-        "y": 246,
-        "w": 29,
-        "h": 45
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 18,
-        "w": 29,
-        "h": 45
+        "y": 17,
+        "w": 30,
+        "h": 46
       },
       "sourceSize": {
         "w": 64,
@@ -2570,8 +2330,8 @@
     },
     "Orc-Attack-Down-2.png": {
       "frame": {
-        "x": 429,
-        "y": 293,
+        "x": 400,
+        "y": 195,
         "w": 28,
         "h": 45
       },
@@ -2592,10 +2352,82 @@
         "y": 0.5
       }
     },
+    "Orc-Walk-Up-3.png": {
+      "frame": {
+        "x": 395,
+        "y": 242,
+        "w": 29,
+        "h": 45
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 18,
+        "w": 29,
+        "h": 45
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Attack-Down-3.png": {
+      "frame": {
+        "x": 389,
+        "y": 346,
+        "w": 26,
+        "h": 45
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 18,
+        "w": 26,
+        "h": 45
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Walk-Up-7.png": {
+      "frame": {
+        "x": 1,
+        "y": 439,
+        "w": 29,
+        "h": 45
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 18,
+        "w": 29,
+        "h": 45
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "Orc-Attack-Left-5.png": {
       "frame": {
-        "x": 402,
-        "y": 340,
+        "x": 32,
+        "y": 439,
         "w": 43,
         "h": 44
       },
@@ -2618,152 +2450,8 @@
     },
     "Orc-Walk-Up-4.png": {
       "frame": {
-        "x": 447,
-        "y": 340,
-        "w": 30,
-        "h": 44
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 18,
-        "w": 30,
-        "h": 44
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Walk-Up-6.png": {
-      "frame": {
-        "x": 402,
-        "y": 386,
-        "w": 30,
-        "h": 44
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 17,
-        "y": 18,
-        "w": 30,
-        "h": 44
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Attack-Right-2.png": {
-      "frame": {
-        "x": 456,
-        "y": 145,
-        "w": 25,
-        "h": 44
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 20,
-        "w": 25,
-        "h": 44
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Attack-Right-3.png": {
-      "frame": {
-        "x": 434,
-        "y": 386,
-        "w": 38,
-        "h": 44
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 19,
-        "y": 20,
-        "w": 38,
-        "h": 44
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Attack-Right-4.png": {
-      "frame": {
-        "x": 1,
-        "y": 442,
-        "w": 44,
-        "h": 44
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 20,
-        "w": 44,
-        "h": 44
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Attack-Right-5.png": {
-      "frame": {
-        "x": 47,
-        "y": 442,
-        "w": 43,
-        "h": 44
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 20,
-        "y": 20,
-        "w": 43,
-        "h": 44
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Orc-Walk-Up-2.png": {
-      "frame": {
-        "x": 92,
-        "y": 441,
+        "x": 77,
+        "y": 439,
         "w": 30,
         "h": 44
       },
@@ -2786,8 +2474,152 @@
     },
     "Orc-Walk-Up-8.png": {
       "frame": {
-        "x": 124,
+        "x": 109,
         "y": 439,
+        "w": 30,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 18,
+        "w": 30,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Attack-Right-2.png": {
+      "frame": {
+        "x": 141,
+        "y": 438,
+        "w": 25,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 20,
+        "w": 25,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Attack-Right-3.png": {
+      "frame": {
+        "x": 168,
+        "y": 438,
+        "w": 38,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 20,
+        "w": 38,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Attack-Right-4.png": {
+      "frame": {
+        "x": 389,
+        "y": 393,
+        "w": 44,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 20,
+        "w": 44,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Attack-Right-5.png": {
+      "frame": {
+        "x": 343,
+        "y": 395,
+        "w": 43,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 20,
+        "w": 43,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Walk-Up-2.png": {
+      "frame": {
+        "x": 388,
+        "y": 439,
+        "w": 30,
+        "h": 44
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 18,
+        "w": 30,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Orc-Walk-Up-6.png": {
+      "frame": {
+        "x": 306,
+        "y": 409,
         "w": 30,
         "h": 44
       },
@@ -2810,8 +2642,8 @@
     },
     "Orc-Attack-Left-2.png": {
       "frame": {
-        "x": 156,
-        "y": 437,
+        "x": 273,
+        "y": 410,
         "w": 25,
         "h": 44
       },
@@ -2834,8 +2666,8 @@
     },
     "Orc-Attack-Left-3.png": {
       "frame": {
-        "x": 183,
-        "y": 437,
+        "x": 208,
+        "y": 434,
         "w": 38,
         "h": 44
       },
@@ -2858,8 +2690,8 @@
     },
     "Orc-Attack-Left-4.png": {
       "frame": {
-        "x": 223,
-        "y": 432,
+        "x": 417,
+        "y": 346,
         "w": 44,
         "h": 44
       },
@@ -2882,8 +2714,8 @@
     },
     "Orc-Walk-Up-5.png": {
       "frame": {
-        "x": 365,
-        "y": 408,
+        "x": 338,
+        "y": 441,
         "w": 30,
         "h": 43
       },
@@ -2906,8 +2738,8 @@
     },
     "Orc-Walk-Up-1.png": {
       "frame": {
-        "x": 397,
-        "y": 432,
+        "x": 420,
+        "y": 439,
         "w": 30,
         "h": 43
       },
@@ -2930,8 +2762,8 @@
     },
     "Orc-Walk-Up-0.png": {
       "frame": {
-        "x": 429,
-        "y": 432,
+        "x": 435,
+        "y": 392,
         "w": 30,
         "h": 43
       },
@@ -2954,8 +2786,8 @@
     },
     "Orc-Attack-Right-0.png": {
       "frame": {
-        "x": 269,
-        "y": 422,
+        "x": 452,
+        "y": 437,
         "w": 31,
         "h": 43
       },
@@ -2978,8 +2810,8 @@
     },
     "Orc-Attack-Left-0.png": {
       "frame": {
-        "x": 306,
-        "y": 410,
+        "x": 415,
+        "y": 49,
         "w": 31,
         "h": 43
       },
@@ -3002,7 +2834,7 @@
     },
     "Orc-Walk-Left-0.png": {
       "frame": {
-        "x": 483,
+        "x": 438,
         "y": 1,
         "w": 31,
         "h": 43
@@ -3026,7 +2858,7 @@
     },
     "Orc-Walk-Right-0.png": {
       "frame": {
-        "x": 483,
+        "x": 448,
         "y": 46,
         "w": 31,
         "h": 43
@@ -3050,8 +2882,8 @@
     },
     "Orc-Walk-Left-5.png": {
       "frame": {
-        "x": 459,
-        "y": 293,
+        "x": 431,
+        "y": 94,
         "w": 28,
         "h": 42
       },
@@ -3074,8 +2906,8 @@
     },
     "Orc-Walk-Right-7.png": {
       "frame": {
-        "x": 483,
-        "y": 91,
+        "x": 420,
+        "y": 289,
         "w": 31,
         "h": 42
       },
@@ -3098,8 +2930,8 @@
     },
     "Orc-Walk-Right-6.png": {
       "frame": {
-        "x": 483,
-        "y": 135,
+        "x": 453,
+        "y": 138,
         "w": 30,
         "h": 42
       },
@@ -3122,8 +2954,8 @@
     },
     "Orc-Attack-Right-1.png": {
       "frame": {
-        "x": 483,
-        "y": 179,
+        "x": 453,
+        "y": 182,
         "w": 31,
         "h": 42
       },
@@ -3146,8 +2978,8 @@
     },
     "Elven-Dead-Down-2.png": {
       "frame": {
-        "x": 479,
-        "y": 337,
+        "x": 426,
+        "y": 242,
         "w": 27,
         "h": 42
       },
@@ -3170,8 +3002,8 @@
     },
     "Orc-Attack-Left-1.png": {
       "frame": {
-        "x": 479,
-        "y": 381,
+        "x": 453,
+        "y": 286,
         "w": 31,
         "h": 42
       },
@@ -3194,8 +3026,8 @@
     },
     "Orc-Attack-Up-3.png": {
       "frame": {
-        "x": 461,
-        "y": 432,
+        "x": 455,
+        "y": 226,
         "w": 27,
         "h": 42
       },
@@ -3218,8 +3050,8 @@
     },
     "Orc-Walk-Right-5.png": {
       "frame": {
-        "x": 460,
-        "y": 223,
+        "x": 1,
+        "y": 486,
         "w": 28,
         "h": 42
       },
@@ -3242,8 +3074,8 @@
     },
     "Orc-Walk-Right-4.png": {
       "frame": {
-        "x": 1,
-        "y": 488,
+        "x": 31,
+        "y": 486,
         "w": 31,
         "h": 42
       },
@@ -3266,8 +3098,8 @@
     },
     "Orc-Attack-Up-5.png": {
       "frame": {
-        "x": 34,
-        "y": 488,
+        "x": 64,
+        "y": 486,
         "w": 39,
         "h": 42
       },
@@ -3290,8 +3122,8 @@
     },
     "Orc-Walk-Left-1.png": {
       "frame": {
-        "x": 75,
-        "y": 488,
+        "x": 105,
+        "y": 486,
         "w": 26,
         "h": 42
       },
@@ -3314,8 +3146,8 @@
     },
     "Orc-Walk-Right-1.png": {
       "frame": {
-        "x": 103,
-        "y": 487,
+        "x": 133,
+        "y": 486,
         "w": 26,
         "h": 42
       },
@@ -3338,8 +3170,8 @@
     },
     "Orc-Walk-Right-8.png": {
       "frame": {
-        "x": 339,
-        "y": 409,
+        "x": 463,
+        "y": 330,
         "w": 22,
         "h": 42
       },
@@ -3362,8 +3194,8 @@
     },
     "Orc-Walk-Left-4.png": {
       "frame": {
-        "x": 131,
-        "y": 485,
+        "x": 161,
+        "y": 486,
         "w": 31,
         "h": 42
       },
@@ -3386,8 +3218,8 @@
     },
     "Orc-Attack-Up-4.png": {
       "frame": {
-        "x": 164,
-        "y": 483,
+        "x": 300,
+        "y": 455,
         "w": 36,
         "h": 42
       },
@@ -3410,8 +3242,8 @@
     },
     "Orc-Walk-Left-6.png": {
       "frame": {
-        "x": 202,
-        "y": 483,
+        "x": 338,
+        "y": 486,
         "w": 30,
         "h": 42
       },
@@ -3434,8 +3266,8 @@
     },
     "Orc-Walk-Left-7.png": {
       "frame": {
-        "x": 234,
-        "y": 478,
+        "x": 370,
+        "y": 485,
         "w": 31,
         "h": 42
       },
@@ -3458,8 +3290,8 @@
     },
     "Orc-Walk-Left-8.png": {
       "frame": {
-        "x": 490,
-        "y": 425,
+        "x": 248,
+        "y": 420,
         "w": 22,
         "h": 42
       },
@@ -3482,8 +3314,8 @@
     },
     "Orc-Walk-Left-3.png": {
       "frame": {
-        "x": 402,
-        "y": 297,
+        "x": 251,
+        "y": 261,
         "w": 23,
         "h": 41
       },
@@ -3506,8 +3338,8 @@
     },
     "Orc-Walk-Right-2.png": {
       "frame": {
-        "x": 490,
-        "y": 223,
+        "x": 461,
+        "y": 91,
         "w": 23,
         "h": 41
       },
@@ -3530,8 +3362,8 @@
     },
     "Orc-Walk-Right-3.png": {
       "frame": {
-        "x": 490,
-        "y": 469,
+        "x": 403,
+        "y": 485,
         "w": 23,
         "h": 41
       },
@@ -3554,8 +3386,8 @@
     },
     "Orc-Attack-Up-0.png": {
       "frame": {
-        "x": 267,
-        "y": 478,
+        "x": 452,
+        "y": 482,
         "w": 30,
         "h": 41
       },
@@ -3578,8 +3410,8 @@
     },
     "Orc-Walk-Left-2.png": {
       "frame": {
-        "x": 490,
-        "y": 266,
+        "x": 194,
+        "y": 484,
         "w": 23,
         "h": 41
       },
@@ -3602,8 +3434,8 @@
     },
     "Orc-Dead-Down-2.png": {
       "frame": {
-        "x": 299,
-        "y": 477,
+        "x": 219,
+        "y": 480,
         "w": 30,
         "h": 40
       },
@@ -3626,8 +3458,8 @@
     },
     "Orc-Attack-Up-1.png": {
       "frame": {
-        "x": 461,
-        "y": 476,
+        "x": 272,
+        "y": 456,
         "w": 26,
         "h": 40
       },
@@ -3650,8 +3482,8 @@
     },
     "Orc-Attack-Up-2.png": {
       "frame": {
-        "x": 331,
-        "y": 477,
+        "x": 487,
+        "y": 1,
         "w": 25,
         "h": 40
       },
@@ -3674,8 +3506,8 @@
     },
     "Elven-Dead-Down-3.png": {
       "frame": {
-        "x": 358,
-        "y": 453,
+        "x": 485,
+        "y": 374,
         "w": 27,
         "h": 38
       },
@@ -3698,8 +3530,8 @@
     },
     "Elven-Dead-Down-5.png": {
       "frame": {
-        "x": 358,
-        "y": 493,
+        "x": 514,
+        "y": 1,
         "w": 34,
         "h": 36
       },
@@ -3722,8 +3554,8 @@
     },
     "Orc-Dead-Down-5.png": {
       "frame": {
-        "x": 394,
-        "y": 477,
+        "x": 514,
+        "y": 39,
         "w": 34,
         "h": 34
       },
@@ -3746,8 +3578,8 @@
     },
     "Orc-Dead-Down-3.png": {
       "frame": {
-        "x": 516,
-        "y": 1,
+        "x": 481,
+        "y": 43,
         "w": 30,
         "h": 33
       },
@@ -3770,8 +3602,8 @@
     },
     "Elven-Dead-Down-4.png": {
       "frame": {
-        "x": 514,
-        "y": 309,
+        "x": 251,
+        "y": 499,
         "w": 32,
         "h": 29
       },
@@ -3794,8 +3626,8 @@
     },
     "Orc-Dead-Down-4.png": {
       "frame": {
-        "x": 515,
-        "y": 135,
+        "x": 285,
+        "y": 499,
         "w": 31,
         "h": 28
       },
@@ -3818,8 +3650,8 @@
     },
     "Arrow-Left.png": {
       "frame": {
-        "x": 515,
-        "y": 223,
+        "x": 514,
+        "y": 75,
         "w": 31,
         "h": 4
       },
@@ -3842,8 +3674,8 @@
     },
     "Arrow-Up.png": {
       "frame": {
-        "x": 508,
-        "y": 309,
+        "x": 300,
+        "y": 410,
         "w": 4,
         "h": 31
       },
@@ -3866,8 +3698,8 @@
     },
     "Arrow-Right.png": {
       "frame": {
-        "x": 515,
-        "y": 340,
+        "x": 481,
+        "y": 78,
         "w": 31,
         "h": 4
       },
@@ -3890,8 +3722,8 @@
     },
     "Arrow-Down.png": {
       "frame": {
-        "x": 387,
-        "y": 453,
+        "x": 206,
+        "y": 57,
         "w": 4,
         "h": 31
       },
@@ -3902,30 +3734,6 @@
         "y": 17,
         "w": 4,
         "h": 31
-      },
-      "sourceSize": {
-        "w": 64,
-        "h": 64
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Elven-Attack-Up-12.png": {
-      "frame": {
-        "x": 1,
-        "y": 1,
-        "w": 26,
-        "h": 60
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 18,
-        "y": 4,
-        "w": 26,
-        "h": 60
       },
       "sourceSize": {
         "w": 64,
@@ -3949,9 +3757,7 @@
       "Elven-Attack-Up-07.png",
       "Elven-Attack-Up-08.png",
       "Elven-Attack-Up-09.png",
-      "Elven-Attack-Up-10.png",
-      "Elven-Attack-Up-11.png",
-      "Elven-Attack-Up-12.png"
+      "Elven-Attack-Up-10.png"
     ],
     "Elven-Attack-Down": [
       "Elven-Attack-Down-00.png",
@@ -3964,9 +3770,7 @@
       "Elven-Attack-Down-07.png",
       "Elven-Attack-Down-08.png",
       "Elven-Attack-Down-09.png",
-      "Elven-Attack-Down-10.png",
-      "Elven-Attack-Down-11.png",
-      "Elven-Attack-Down-12.png"
+      "Elven-Attack-Down-10.png"
     ],
     "Elven-Attack-Left": [
       "Elven-Attack-Left-00.png",
@@ -3979,9 +3783,7 @@
       "Elven-Attack-Left-07.png",
       "Elven-Attack-Left-08.png",
       "Elven-Attack-Left-09.png",
-      "Elven-Attack-Left-10.png",
-      "Elven-Attack-Left-11.png",
-      "Elven-Attack-Left-12.png"
+      "Elven-Attack-Left-10.png"
     ],
     "Elven-Attack-Right": [
       "Elven-Attack-Right-00.png",
@@ -3994,9 +3796,7 @@
       "Elven-Attack-Right-07.png",
       "Elven-Attack-Right-08.png",
       "Elven-Attack-Right-09.png",
-      "Elven-Attack-Right-10.png",
-      "Elven-Attack-Right-11.png",
-      "Elven-Attack-Right-12.png"
+      "Elven-Attack-Right-10.png"
     ],
     "Elven-Walk-Left": [
       "Elven-Walk-Left-0.png",
@@ -4141,8 +3941,8 @@
     "image": "spritesheet.png",
     "format": "RGBA8888",
     "size": {
-      "w": 547,
-      "h": 531
+      "w": 549,
+      "h": 529
     },
     "scale": 1
   }

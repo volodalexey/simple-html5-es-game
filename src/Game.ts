@@ -7,13 +7,15 @@ import { TileMap } from './TileMap'
 import { Camera } from './Camera'
 import { Collider } from './Collider'
 import { logLayout } from './logger'
+import { type IOrcOptions } from './Orc'
 
 export interface IGameOptions {
   viewWidth: number
   viewHeight: number
   textures: {
-    elvenTextures: IPlayerOptions['textures']
-    orcTextures: IPlayerOptions['textures']
+    elvenTextures: IPlayerOptions['textures']['elvenTextures']
+    orcTextures: IOrcOptions['textures']
+    arrowTextures: IPlayerOptions['textures']['arrowTextures']
   }
 }
 
@@ -22,7 +24,7 @@ export class Game extends Container {
   public time = 0
 
   static options = {
-    maxTime: 25000,
+    maxTime: 600000,
     startLevel: 1,
     maxLevel: 2
   }
@@ -59,7 +61,8 @@ export class Game extends Container {
     viewHeight,
     textures: {
       elvenTextures,
-      orcTextures
+      orcTextures,
+      arrowTextures
     }
   }: IGameOptions): void {
     this.tileMap = new TileMap({
@@ -74,7 +77,9 @@ export class Game extends Container {
 
     this.inputHandler = new InputHandler({ eventTarget: this.tileMap })
 
-    this.player = new Player({ inputHandler: this.inputHandler, textures: elvenTextures })
+    this.player = new Player({
+      game: this, textures: { arrowTextures, elvenTextures }
+    })
 
     this.camera = new Camera({ tileMap: this.tileMap })
     this.camera.watch(this.player)

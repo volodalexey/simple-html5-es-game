@@ -80,16 +80,6 @@
       "folder": ""
     },
     {
-      "name": "Elven-Attack-Down-11.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Down-11.png",
-      "folder": ""
-    },
-    {
-      "name": "Elven-Attack-Down-12.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Down-12.png",
-      "folder": ""
-    },
-    {
       "name": "Elven-Attack-Left-00.png",
       "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Left-00.png",
       "folder": ""
@@ -142,16 +132,6 @@
     {
       "name": "Elven-Attack-Left-10.png",
       "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Left-10.png",
-      "folder": ""
-    },
-    {
-      "name": "Elven-Attack-Left-11.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Left-11.png",
-      "folder": ""
-    },
-    {
-      "name": "Elven-Attack-Left-12.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Left-12.png",
       "folder": ""
     },
     {
@@ -210,16 +190,6 @@
       "folder": ""
     },
     {
-      "name": "Elven-Attack-Right-11.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Right-11.png",
-      "folder": ""
-    },
-    {
-      "name": "Elven-Attack-Right-12.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Right-12.png",
-      "folder": ""
-    },
-    {
       "name": "Elven-Attack-Up-00.png",
       "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Up-00.png",
       "folder": ""
@@ -272,16 +242,6 @@
     {
       "name": "Elven-Attack-Up-10.png",
       "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Up-10.png",
-      "folder": ""
-    },
-    {
-      "name": "Elven-Attack-Up-11.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Up-11.png",
-      "folder": ""
-    },
-    {
-      "name": "Elven-Attack-Up-12.png",
-      "path": "/mnt/mystorage/js_projects/simple-html5-es-game/src-texture/Elven-Attack-Up-12.png",
       "folder": ""
     },
     {

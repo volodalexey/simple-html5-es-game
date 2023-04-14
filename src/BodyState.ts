@@ -30,8 +30,12 @@ export class BodyState {
     this.state = state
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     throw new Error('enter() not implemented in child class')
+  }
+
+  completed (): void {
+    throw new Error('completed() not implemented in child class')
   }
 
   handleInput (): void {
@@ -48,7 +52,7 @@ export class StandUp extends BodyState {
     super({ body, state: EBodyState.standUp })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.up, speed: 0 })
     this.body.switchAnimation(BodyAnimation.standUp)
   }
@@ -63,7 +67,7 @@ export class StandRight extends BodyState {
     super({ body, state: EBodyState.standRight })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.right, speed: 0 })
     this.body.switchAnimation(BodyAnimation.standRight)
   }
@@ -78,7 +82,7 @@ export class StandDown extends BodyState {
     super({ body, state: EBodyState.standDown })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.down, speed: 0 })
     this.body.switchAnimation(BodyAnimation.standDown)
   }
@@ -93,7 +97,7 @@ export class StandLeft extends BodyState {
     super({ body, state: EBodyState.standLeft })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.left, speed: 0 })
     this.body.switchAnimation(BodyAnimation.standLeft)
   }
@@ -108,7 +112,7 @@ export class WalkUp extends BodyState {
     super({ body, state: EBodyState.walkUp })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.up, speed: this.body.moveSpeed })
     this.body.switchAnimation(BodyAnimation.walkUp)
   }
@@ -123,7 +127,7 @@ export class WalkRight extends BodyState {
     super({ body, state: EBodyState.walkRight })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.right, speed: this.body.moveSpeed })
     this.body.switchAnimation(BodyAnimation.walkRight)
   }
@@ -138,7 +142,7 @@ export class WalkDown extends BodyState {
     super({ body, state: EBodyState.walkDown })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.down, speed: this.body.moveSpeed })
     this.body.switchAnimation(BodyAnimation.walkDown)
   }
@@ -153,7 +157,7 @@ export class WalkLeft extends BodyState {
     super({ body, state: EBodyState.walkLeft })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.velocity.setDirection({ direction: EVectorDirection.left, speed: this.body.moveSpeed })
     this.body.switchAnimation(BodyAnimation.walkLeft)
   }
@@ -168,9 +172,13 @@ export class AttackUp extends BodyState {
     super({ body, state: EBodyState.attackUp })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.stop()
     this.body.switchAnimation(BodyAnimation.attackUp)
+  }
+
+  completed (): void {
+    this.body.setState(EBodyState.standUp)
   }
 
   handleInput (): void {
@@ -183,9 +191,13 @@ export class AttackRight extends BodyState {
     super({ body, state: EBodyState.attackRight })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.stop()
     this.body.switchAnimation(BodyAnimation.attackRight)
+  }
+
+  completed (): void {
+    this.body.setState(EBodyState.standRight)
   }
 
   handleInput (): void {
@@ -198,9 +210,13 @@ export class AttackDown extends BodyState {
     super({ body, state: EBodyState.attackDown })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.stop()
     this.body.switchAnimation(BodyAnimation.attackDown)
+  }
+
+  completed (): void {
+    this.body.setState(EBodyState.standDown)
   }
 
   handleInput (): void {
@@ -213,9 +229,13 @@ export class AttackLeft extends BodyState {
     super({ body, state: EBodyState.attackLeft })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.stop()
     this.body.switchAnimation(BodyAnimation.attackLeft)
+  }
+
+  completed (): void {
+    this.body.setState(EBodyState.standLeft)
   }
 
   handleInput (): void {
@@ -228,7 +248,7 @@ export class DeadDown extends BodyState {
     super({ body, state: EBodyState.deadDown })
   }
 
-  enter (): void {
+  enter (state: EBodyState): void {
     this.body.stop()
     this.body.switchAnimation(BodyAnimation.deadDown)
   }

@@ -6,22 +6,28 @@ import {
 } from './PlayerState'
 import { type IBodyOptions, Body } from './Body'
 import { type BodyState, EBodyState } from './BodyState'
-import { type InputHandler } from './InputHandler'
+import { type Game } from './Game'
+import { Arrow, type IArrowOptions } from './Arrow'
 
 export interface IPlayerOptions {
-  inputHandler: InputHandler
-  textures: IBodyOptions['textures']
+  game: Game
+  textures: {
+    elvenTextures: IBodyOptions['textures']
+    arrowTextures: IArrowOptions['textures']
+  }
 }
 
 export class Player extends Body {
   public states!: Record<EBodyState, BodyState>
 
-  public inputHandler!: InputHandler
+  public game!: Game
+  public arrowTextures!: IArrowOptions['textures']
   constructor (options: IPlayerOptions) {
-    super({ ...options, moveSpeed: 200 })
-    this.inputHandler = options.inputHandler
+    super({ textures: options.textures.elvenTextures, moveSpeed: 200 })
+    this.game = options.game
+    this.arrowTextures = options.textures.arrowTextures
 
-    const stateOptions = { player: this, inputHandler: this.inputHandler }
+    const stateOptions = { player: this, inputHandler: this.game.inputHandler }
     this.states = {
       [EBodyState.standUp]: new PlayerStandUp(stateOptions),
       [EBodyState.standRight]: new PlayerStandRight(stateOptions),
@@ -37,9 +43,21 @@ export class Player extends Body {
       [EBodyState.attackLeft]: new PlayerAttackLeft(stateOptions),
       [EBodyState.deadDown]: new PlayerDeadDown(stateOptions)
     }
+
+    this.onAttackCompleted = this.shootArrow
   }
 
   handleUpdate (deltaMS: number): void {
     super.handleUpdate(deltaMS)
+  }
+
+  shootArrow (): void {
+    const arrow = new Arrow({
+      textures: this.arrowTextures,
+      direction: this.velocity.direction,
+      initX: this.x,
+      initY: this.y
+    })
+    this.game.tileMap.arrows.addChild(arrow)
   }
 }

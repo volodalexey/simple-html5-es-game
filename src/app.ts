@@ -15,7 +15,7 @@ async function run (): Promise<void> {
   })
   await SceneManager.changeScene(loaderScene)
   await loaderScene.initializeLoader()
-  const { levelSettings, spritesheet: { animations } } = loaderScene.getAssets()
+  const { levelSettings, spritesheet: { animations, textures } } = loaderScene.getAssets()
   await SceneManager.changeScene(new MainScene({
     app: SceneManager.app,
     viewWidth: SceneManager.width,
@@ -43,6 +43,12 @@ async function run (): Promise<void> {
         walkUpTextures: animations['Orc-Walk-Up'],
         walkDownTextures: animations['Orc-Walk-Down'],
         deadDownTextures: animations['Orc-Dead-Down']
+      },
+      arrowTextures: {
+        upTexture: textures['Arrow-Up.png'],
+        rightTexture: textures['Arrow-Right.png'],
+        downTexture: textures['Arrow-Down.png'],
+        leftTexture: textures['Arrow-Left.png']
       }
     }
   }))

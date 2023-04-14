@@ -66,6 +66,7 @@ export class Body extends Container {
   public currentState!: BodyState
   public initialRect!: Graphics
   public collisionShape!: Graphics
+  public onAttackCompleted?: () => void
   standLeftAnimation!: Sprite
   standRightAnimation!: Sprite
   standUpAnimation!: Sprite
@@ -163,18 +164,22 @@ export class Body extends Container {
     this.standLeftAnimation = standLeftAnimation
 
     const attackLeftAnimation = new AnimatedSprite(attackLeftTextures)
+    attackLeftAnimation.onComplete = this.triggerAttackAnimationComplete
     spritesContainer.addChild(attackLeftAnimation)
     this.attackLeftAnimation = attackLeftAnimation
 
     const attackRightAnimation = new AnimatedSprite(attackRightTextures)
+    attackRightAnimation.onComplete = this.triggerAttackAnimationComplete
     spritesContainer.addChild(attackRightAnimation)
     this.attackRightAnimation = attackRightAnimation
 
     const attackUpAnimation = new AnimatedSprite(attackUpTextures)
+    attackUpAnimation.onComplete = this.triggerAttackAnimationComplete
     spritesContainer.addChild(attackUpAnimation)
     this.attackUpAnimation = attackUpAnimation
 
     const attackDownAnimation = new AnimatedSprite(attackDownTextures)
+    attackDownAnimation.onComplete = this.triggerAttackAnimationComplete
     spritesContainer.addChild(attackDownAnimation)
     this.attackDownAnimation = attackDownAnimation
 
@@ -270,15 +275,19 @@ export class Body extends Container {
     this.currentAnimation.visible = true
   }
 
-  isShooting (): boolean {
+  isAttacking (): boolean {
     const attackAnimations: Array<AnimatedSprite | Sprite> = [this.attackUpAnimation, this.attackRightAnimation,
       this.attackDownAnimation, this.attackLeftAnimation]
     return attackAnimations.includes(this.currentAnimation)
   }
 
+  isDead (): boolean {
+    return this.currentAnimation === this.deadDownAnimation
+  }
+
   setState (state: EBodyState): void {
     this.currentState = this.states[state]
-    this.currentState.enter()
+    this.currentState.enter(state)
     logBodyState(`state=${state}`)
   }
 
@@ -289,7 +298,7 @@ export class Body extends Container {
   handleUpdate (deltaMS: number): void {
     this.currentState.handleInput()
 
-    if (!this.isShooting()) {
+    if (!this.isAttacking()) {
       this.velocity.move({ object: this, dt: deltaMS })
     }
   }
@@ -329,5 +338,14 @@ export class Body extends Container {
       bounds.left = relativePoint.x + bounds.left
     }
     return bounds
+  }
+
+  triggerAttackAnimationComplete = (): void => {
+    if (typeof this.currentState.completed === 'function') {
+      this.currentState.completed()
+    }
+    if (typeof this.onAttackCompleted === 'function') {
+      this.onAttackCompleted()
+    }
   }
 }

@@ -5,6 +5,7 @@ import { logLayout } from './logger'
 import { manifest } from './LoaderScene'
 import { type IBodyOptions } from './Body'
 import { Orc } from './Orc'
+import { type Arrow } from './Arrow'
 
 export interface ITileMapOptions {
   viewWidth: number
@@ -22,6 +23,7 @@ interface IBoundsData {
 export class TileMap extends Container {
   public hitboxes = new Container<Hitbox>()
   public enemies = new Container<Orc>()
+  public arrows = new Container<Arrow>()
   public background = new Sprite()
   public viewWidth!: number
   public viewHeight!: number
@@ -40,6 +42,7 @@ export class TileMap extends Container {
     this.addChild(this.background)
     this.addChild(this.hitboxes)
     this.addChild(this.enemies)
+    this.addChild(this.arrows)
   }
 
   async idleLoad (): Promise<void> {
@@ -140,11 +143,30 @@ export class TileMap extends Container {
     while (this.enemies.children[0] != null) {
       this.enemies.children[0].removeFromParent()
     }
+    while (this.arrows.children[0] != null) {
+      this.arrows.children[0].removeFromParent()
+    }
   }
 
   handleUpdate (deltaMS: number): void {
     this.enemies.children.forEach(e => {
       e.handleUpdate(deltaMS)
     })
+    this.arrows.children.forEach(e => {
+      e.handleUpdate(deltaMS)
+    })
+    for (let i = 0; i < this.arrows.children.length; i++) {
+      const arrow = this.arrows.children[i]
+      arrow.markedForDeletion = arrow.isOutOfViewport({
+        top: 0,
+        left: 0,
+        right: this.background.width,
+        bottom: this.background.height
+      })
+      if (arrow.markedForDeletion) {
+        arrow.removeFromParent()
+        i--
+      }
+    }
   }
 }
