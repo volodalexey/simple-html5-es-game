@@ -1,5 +1,7 @@
 import { Sprite, type Texture } from 'pixi.js'
 import { EVectorDirection, Vector } from './Vector'
+import { type Body } from './Body'
+import { EBodyState } from './BodyState'
 
 export interface IProjectileOptions {
   texture: Texture
@@ -95,6 +97,27 @@ export class Arrow extends Projectile {
       return true
     }
     if (pTop > bottom) {
+      return true
+    }
+    return false
+  }
+
+  isHit ({ enemy }: { enemy: Body }): boolean {
+    const cell = 64
+    const halfCell = cell / 2
+    let posX = this.x
+    let posY = this.y
+    const { direction } = this.velocity
+    if (direction === EVectorDirection.right) { posX += cell; posY += halfCell };
+    if (direction === EVectorDirection.left) { posY += halfCell };
+    if (direction === EVectorDirection.up) { posX += halfCell };
+    if (direction === EVectorDirection.down) { posX += halfCell; posY += cell };
+
+    if ((posX > enemy.x) &&
+       (posX < (enemy.x + cell)) &&
+       (posY > enemy.y) &&
+      (posY < (enemy.y + cell))) {
+      enemy.setState(EBodyState.deadDown)
       return true
     }
     return false

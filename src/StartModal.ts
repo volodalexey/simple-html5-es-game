@@ -29,7 +29,9 @@ export class StartModal extends Container {
     left: 50,
     width: 200,
     height: 50,
-    fill: 0x0ea5e9,
+    fill: 0xffffff,
+    fillError: 0x9a3412,
+    fillSuccess: 0x22c55e,
     borderRadius: 10
   }
 
@@ -90,5 +92,15 @@ export class StartModal extends Container {
     this.button.on('pointertap', (e) => {
       this.emit('click', e)
     })
+  }
+
+  win (text: string): void {
+    this.reasonText.text = text
+    this.button.tint = this.buttonOptions.fillSuccess
+  }
+
+  lose (text: string): void {
+    this.reasonText.text = text
+    this.button.tint = this.buttonOptions.fillError
   }
 }

@@ -163,7 +163,7 @@ export class TileMap extends Container {
     const HALF_JUMP = JUMP / 2
     const sword = 5
     this.enemies.children.forEach(enemy => {
-      if (!player.isDead()) {
+      if (!player.isDead() && !enemy.isDead()) {
         const enemyBounds = enemy.getCollisionShapeBounds(enemy)
         // left tactical jump
         if (right > enemyBounds.left - JUMP &&
@@ -209,20 +209,33 @@ export class TileMap extends Container {
       enemy.handleUpdate(deltaMS)
     })
     this.arrows.children.forEach(arrow => {
-      arrow.handleUpdate(deltaMS)
+      if (this.enemies.children
+        .filter(enemy => !enemy.isDead())
+        .some(enemy => arrow.isHit({ enemy }))) {
+        arrow.markedForDeletion = true
+        // this.statusBar.updateOrcs(this.tileMap.getLiveEnemiesCount())
+      } else {
+        arrow.handleUpdate(deltaMS)
+      }
     })
     for (let i = 0; i < this.arrows.children.length; i++) {
       const arrow = this.arrows.children[i]
-      arrow.markedForDeletion = arrow.isOutOfViewport({
-        top: 0,
-        left: 0,
-        right: this.background.width,
-        bottom: this.background.height
-      })
+      arrow.markedForDeletion = arrow.markedForDeletion
+        ? true
+        : arrow.isOutOfViewport({
+          top: 0,
+          left: 0,
+          right: this.background.width,
+          bottom: this.background.height
+        })
       if (arrow.markedForDeletion) {
         arrow.removeFromParent()
         i--
       }
     }
+  }
+
+  getLiveEnemiesCount (): number {
+    return this.enemies.children.filter(e => !e.isDead()).length
   }
 }

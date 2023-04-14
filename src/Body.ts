@@ -11,6 +11,9 @@ import { EVectorDirection, Vector } from './Vector'
 
 export interface IBodyOptions {
   moveSpeed: number
+  attackAnimationSpeed?: number
+  walkAnimationSpeed?: number
+  deadAnimationSpeed?: number
   textures: {
     attackLeftTextures: Texture[]
     attackRightTextures: Texture[]
@@ -58,9 +61,6 @@ export class Body extends Container {
   }
 
   public moveSpeed!: IBodyOptions['moveSpeed']
-  public attackAnimationSpeed = 0.2
-  public walkAnimationSpeed = 0.2
-  public deadAnimationSpeed = 0.2
 
   public states!: Record<EBodyState, BodyState>
   public currentState!: BodyState
@@ -136,9 +136,9 @@ export class Body extends Container {
       walkUpTextures,
       walkDownTextures,
       deadDownTextures
-    }
+    },
+    attackAnimationSpeed = 0.2, walkAnimationSpeed = 0.2, deadAnimationSpeed = 0.2
   }: IBodyOptions): void {
-    const { attackAnimationSpeed, walkAnimationSpeed, deadAnimationSpeed } = this
     const playerBox = new Graphics()
     this.addChild(playerBox)
     this.playerBox = playerBox

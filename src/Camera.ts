@@ -10,9 +10,7 @@ export class Camera {
   public watchObject?: Container
 
   static options = {
-    scrollEdge: 200,
-    initWidth: 200,
-    initHeight: 200
+    scrollEdge: 100
   }
 
   constructor (options: ICameraOptions) {

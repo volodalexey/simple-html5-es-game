@@ -51,6 +51,9 @@ export class Dummy extends AI {
   }
 
   handleUpdate (deltaMS: number): void {
+    if ((this.body?.isDead()) ?? false) {
+      return
+    }
     if (this.elapsedTime >= this.changeTime) {
       this.elapsedTime = 0
       this.changeDirection()

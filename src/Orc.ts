@@ -14,6 +14,9 @@ export class Orc extends Body {
   }
 
   handleUpdate (deltaMS: number): void {
+    if (this.isDead()) {
+      return
+    }
     this.ai.handleUpdate(deltaMS)
     if (!this.isAttacking()) {
       this.velocity.move({ object: this, dt: deltaMS })

@@ -23,7 +23,7 @@ export class Player extends Body {
   public game!: Game
   public arrowTextures!: IArrowOptions['textures']
   constructor (options: IPlayerOptions) {
-    super({ textures: options.textures.elvenTextures, moveSpeed: 200 })
+    super({ textures: options.textures.elvenTextures, moveSpeed: 200, attackAnimationSpeed: 0.6 })
     this.game = options.game
     this.arrowTextures = options.textures.arrowTextures
 

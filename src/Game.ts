@@ -111,7 +111,11 @@ export class Game extends Container {
     this.gameEnded = true
     this.player.stop()
     this.startModal.visible = true
-    this.startModal.reasonText.text = success ? 'Win!!' : 'You lose!'
+    if (success) {
+      this.startModal.win('Win!!')
+    } else {
+      this.startModal.lose('You lose!')
+    }
   }
 
   handleResize ({ viewWidth, viewHeight }: {
@@ -158,6 +162,8 @@ export class Game extends Container {
 
     if (this.player.isDead()) {
       this.endGame(false)
+    } else if (this.tileMap.getLiveEnemiesCount() <= 0) {
+      this.runLevel(true)
     }
   }
 
@@ -166,7 +172,7 @@ export class Game extends Container {
       this.currentLevel++
     }
     if (this.currentLevel > Game.options.maxLevel) {
-      this.endGame()
+      this.endGame(true)
       return
     }
     this.tileMap.restart()
@@ -191,5 +197,6 @@ export class Game extends Container {
     })
 
     this.statusBar.updateLevel(this.currentLevel)
+    this.statusBar.updateOrcs(this.tileMap.getLiveEnemiesCount())
   }
 }
