@@ -8,11 +8,13 @@ import { Orc } from './Orc'
 import { type Arrow } from './Arrow'
 import { type Player } from './Player'
 import { EBodyState } from './BodyState'
+import { AUDIO } from './audio'
 
 export interface ITileMapOptions {
   viewWidth: number
   viewHeight: number
   orcTextures: IBodyOptions['textures']
+  onEnemiesUpdate: () => void
 }
 
 interface IBoundsData {
@@ -33,11 +35,13 @@ export class TileMap extends Container {
   public maxYPivot = 0
   public orcTextures !: ITileMapOptions['orcTextures']
   public player !: Player
+  public onEnemiesUpdate: ITileMapOptions['onEnemiesUpdate']
   constructor (options: ITileMapOptions) {
     super()
     this.viewWidth = options.viewWidth
     this.viewHeight = options.viewHeight
     this.orcTextures = options.orcTextures
+    this.onEnemiesUpdate = options.onEnemiesUpdate
     this.setup()
   }
 
@@ -158,53 +162,12 @@ export class TileMap extends Container {
 
   handleUpdate (deltaMS: number): void {
     const { player } = this
-    const { top, right, bottom, left } = player.getCollisionShapeBounds(player)
-    const JUMP = 30 // use level settings cell
-    const HALF_JUMP = JUMP / 2
-    const sword = 5
+    const playerBounds = player.getCollisionShapeBounds(player)
+
     this.enemies.children.forEach(enemy => {
-      if (!player.isDead() && !enemy.isDead()) {
-        const enemyBounds = enemy.getCollisionShapeBounds(enemy)
-        // left tactical jump
-        if (right > enemyBounds.left - JUMP &&
-          right < enemyBounds.left &&
-          bottom > enemyBounds.top - HALF_JUMP &&
-          top < enemyBounds.bottom + HALF_JUMP) {
-          enemy.setState(EBodyState.attackLeft)
-          enemy.setCollisionShapePosition({ x: right + sword, y: top })
-          player.setState(EBodyState.deadDown)
-          return
-        }
-        // up tactical jump
-        if (bottom > enemyBounds.top - JUMP &&
-          bottom < enemyBounds.top &&
-          right > enemyBounds.left - HALF_JUMP &&
-          left < enemyBounds.right + HALF_JUMP) {
-          enemy.setState(EBodyState.attackUp)
-          enemy.setCollisionShapePosition({ x: left, y: bottom })
-          player.setState(EBodyState.deadDown)
-          return
-        }
-        // right tactical jump
-        if (left < enemyBounds.right + JUMP &&
-          left > enemyBounds.right &&
-          bottom > enemyBounds.top - HALF_JUMP &&
-          top < enemyBounds.bottom + HALF_JUMP) {
-          enemy.setState(EBodyState.attackRight)
-          enemy.setCollisionShapePosition({ x: left - sword - enemy.collisionShape.width, y: top })
-          player.setState(EBodyState.deadDown)
-          return
-        }
-        // down tactical jump
-        if (top < enemyBounds.bottom + JUMP &&
-          top > enemyBounds.bottom &&
-          right > enemyBounds.left - HALF_JUMP &&
-          left < enemyBounds.right + HALF_JUMP) {
-          enemy.setState(EBodyState.attackDown)
-          enemy.setCollisionShapePosition({ x: left, y: top - enemy.collisionShape.height })
-          player.setState(EBodyState.deadDown)
-          return
-        }
+      if (!player.isDead() && !enemy.isDead() && enemy.canJumpAndHit(playerBounds)) {
+        AUDIO.sword.play()
+        player.setState(EBodyState.deadDown)
       }
       enemy.handleUpdate(deltaMS)
     })
@@ -213,7 +176,8 @@ export class TileMap extends Container {
         .filter(enemy => !enemy.isDead())
         .some(enemy => arrow.isHit({ enemy }))) {
         arrow.markedForDeletion = true
-        // this.statusBar.updateOrcs(this.tileMap.getLiveEnemiesCount())
+        AUDIO.hit.play()
+        this.onEnemiesUpdate()
       } else {
         arrow.handleUpdate(deltaMS)
       }

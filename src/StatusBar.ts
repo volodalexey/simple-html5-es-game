@@ -3,7 +3,7 @@ import { Container, Text } from 'pixi.js'
 export class StatusBar extends Container {
   static options = {
     padding: 20,
-    textColor: 0xbb5857,
+    textColor: 0xffff00,
     textColorShadow: 0x98cbd8,
     textShadowOffset: 0.5,
     textSize: 40

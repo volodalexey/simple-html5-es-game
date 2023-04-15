@@ -24,6 +24,13 @@ module.exports = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
         exclude: /node_modules/
+      },
+      {
+        test: /\.(wav)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: './assets/audio/[name][ext]'
+        }
       }
     ]
   },

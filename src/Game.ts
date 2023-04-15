@@ -68,7 +68,10 @@ export class Game extends Container {
     this.tileMap = new TileMap({
       viewWidth,
       viewHeight,
-      orcTextures
+      orcTextures,
+      onEnemiesUpdate: () => {
+        this.statusBar.updateOrcs(this.tileMap.getLiveEnemiesCount())
+      }
     })
     this.addChild(this.tileMap)
 
@@ -103,6 +106,7 @@ export class Game extends Container {
     this.startModal.visible = false
     this.gameEnded = false
     this.time = 0
+    this.currentLevel = Game.options.startLevel
     this.runLevel()
     this.inputHandler.restart()
   }

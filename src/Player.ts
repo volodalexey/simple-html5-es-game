@@ -8,6 +8,7 @@ import { type IBodyOptions, Body } from './Body'
 import { type BodyState, EBodyState } from './BodyState'
 import { type Game } from './Game'
 import { Arrow, type IArrowOptions } from './Arrow'
+import { AUDIO } from './audio'
 
 export interface IPlayerOptions {
   game: Game
@@ -52,6 +53,7 @@ export class Player extends Body {
   }
 
   shootArrow (): void {
+    AUDIO.arrow.play()
     const arrow = new Arrow({
       textures: this.arrowTextures,
       direction: this.velocity.direction,
